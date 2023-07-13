@@ -1,0 +1,16 @@
+{
+  "name": "final-project-group_2",
+  "version": "1.0.0",
+  "description": "Waste Classification API",
+  "main": "practice.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node": "^20.4.0"
+  }
+}
