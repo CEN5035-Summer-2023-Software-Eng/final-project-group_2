@@ -479,7 +479,7 @@ body {
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 31%;
+    width: 30.65%;
     height: 3px;
     background-color: #a8399b;
   }
@@ -519,11 +519,11 @@ body {
     content: "";
     position: absolute;
     display: block;
-    width: 158px;
+    width: 160px;
     height: 3px;
     background: #0D5611;
     bottom: 5px;
-    left: calc(50% - 79px);
+    left: calc(50% - 80px);
   }
   
   .services .icon-box {
@@ -604,11 +604,11 @@ body {
     content: "";
     position: absolute;
     display: block;
-    width: 108px;
+    width: 106px;
     height: 3px;
     background: #0D5611;
     bottom: 5px;
-    left: calc(50% - 54px);
+    left: calc(50% - 53px);
   }
 
   .team .member {
@@ -618,10 +618,10 @@ body {
     border-radius: 5px;
     background: #fff;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Set the width to occupy the full width of the container */
-    padding: 20px; /* Add equal padding on all sides */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
-    display: flex; /* Use flexbox to center the content vertically and horizontally */
+    width: 100%; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    display: flex;
     justify-content: center;
     align-items: center;
   }
@@ -674,13 +674,24 @@ body {
     padding: 60px 0;
   }
   
+  .faq h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 536px;
+    height: 3px;
+    background: #0D5611;
+    bottom: 5px;
+    left: calc(50% - 268px);
+  }
+
   .faq .faq-list {
     padding: 0;
     list-style: none;
   }
   
   .faq .faq-list li {
-    border-bottom: 1px solid #f2f2fe;
+    border-bottom: 1px solid #f2fef2;
     margin-bottom: 20px;
     padding-bottom: 20px;
   }
@@ -688,13 +699,13 @@ body {
   .faq .faq-list .question {
     display: block;
     position: relative;
-    font-family: #5a5af3;
+    font-family: #D14AC2;
     font-size: 18px;
     line-height: 24px;
     font-weight: 400;
     padding-left: 25px;
     cursor: pointer;
-    color: #2a2af0;
+    color: #a8399b;
     transition: 0.3s;
   }
   
@@ -719,7 +730,7 @@ body {
   }
   
   .faq .faq-list .collapsed:hover {
-    color: #5a5af3;
+    color: #D14AC2;
   }
   
   .faq .faq-list .collapsed .icon-show {
