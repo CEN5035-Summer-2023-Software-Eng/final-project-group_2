@@ -83,7 +83,7 @@ body {
   }
   
   #header .logo {
-    font-size: 32px;
+    font-size: 40px;
     margin: 0;
     padding: 0;
     line-height: 1;
@@ -91,7 +91,7 @@ body {
     letter-spacing: 2px;
     font-family: "Poppins", sans-serif;
   }
-
+  
   #header .logo a {
     color: #51c462;
   }
@@ -185,7 +185,7 @@ body {
     color:#fff;
     background: #3a9948;
   }
-
+  
   /**
   * Mobile Navigation 
   */
@@ -299,126 +299,126 @@ body {
   # Hero Section
   --------------------------------------------------------------*/
   #hero {
-  width: 100%;
-  height: 100vh;
-  background: white;
-  border-bottom: 2px solid white;
-}
-
-#hero .container {
-  padding-top: 80px;
-}
-
-#hero h1 {
-  margin: 0;
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 56px;
-  color: #0D5611;
-  font-family: "Poppins", sans-serif;
-}
-
-#hero h2 {
-  margin: 10px 0 0 0;
-  font-size: 20px;
-}
-
-#hero ul {
-  margin-top: 15px;
-  list-style: none;
-  padding: 0;
-}
-
-#hero ul li {
-  padding: 10px 0 0 28px;
-  position: relative;
-}
-
-#hero ul i {
-  left: 0;
-  top: 7px;
-  position: absolute;
-  font-size: 20px;
-  color: #51c462;
-}
-
-#hero .btn-learn-more {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  letter-spacing: 0.5px;
-  display: inline-block;
-  padding: 8px 30px 9px 30px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  transition: 0.5s;
-  border-radius: 50px;
-}
-
-#hero .btn-learn-more {
-  color: #a8399b;
-  border: 2px solid #a8399b;
-}
-
-#hero .btn-learn-more:hover {
-  background: #a8399b;
-  color: #fff;
-}
-
-@media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    border-bottom: 2px solid white;
   }
-}
-
-@media (max-width: 991px) {
-  #hero .hero-img {
-    text-align: center;
+  
+  #hero .container {
+    padding-top: 80px;
   }
-
-  #hero .hero-img img {
-    width: 50%;
-  }
-}
-
-@media (max-width: 768px) {
+  
   #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+    margin: 0;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 56px;
+    color: #0D5611;
+    font-family: "Poppins", sans-serif;
   }
-
+  
   #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
+    margin: 10px 0 0 0;
+    font-size: 20px;
   }
-
-  #hero .hero-img img {
-    width: 70%;
-  }
-}
-
-@media (max-width: 575px) {
-  #hero {
-    text-align: center;
-  }
-
+  
   #hero ul {
-    text-align: left;
-    font-size: 14px;
+    margin-top: 15px;
+    list-style: none;
+    padding: 0;
   }
-
-  #hero .hero-img img {
-    width: 80%;
+  
+  #hero ul li {
+    padding: 10px 0 0 28px;
+    position: relative;
   }
-
+  
+  #hero ul i {
+    left: 0;
+    top: 7px;
+    position: absolute;
+    font-size: 20px;
+    color: #51c462;
+  }
+  
   #hero .btn-learn-more {
-    padding-left: 18px;
-    padding-right: 18px;
-    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding: 8px 30px 9px 30px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    transition: 0.5s;
+    border-radius: 50px;
   }
-}
-
+  
+  #hero .btn-learn-more {
+    color: #a8399b;
+    border: 2px solid #a8399b;
+  }
+  
+  #hero .btn-learn-more:hover {
+    background: #a8399b;
+    color: #fff;
+  }
+  
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    #hero .hero-img {
+      text-align: center;
+    }
+  
+    #hero .hero-img img {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  
+    #hero h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+  
+    #hero .hero-img img {
+      width: 70%;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    #hero {
+      text-align: center;
+    }
+  
+    #hero ul {
+      text-align: left;
+      font-size: 14px;
+    }
+  
+    #hero .hero-img img {
+      width: 80%;
+    }
+  
+    #hero .btn-learn-more {
+      padding-left: 18px;
+      padding-right: 18px;
+      font-size: 14px;
+    }
+  }
+  
   /*--------------------------------------------------------------
   # Sections General
   --------------------------------------------------------------*/
@@ -670,123 +670,6 @@ body {
   
   .team .member:hover .social {
     opacity: 1;
-  }
-  
-  /*--------------------------------------------------------------
-  # Pricing
-  --------------------------------------------------------------*/
-  .pricing .row {
-    padding-top: 40px;
-  }
-  
-  .pricing .box {
-    padding: 40px;
-    margin-bottom: 30px;
-    box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
-    background: #fff;
-    text-align: center;
-  }
-  
-  .pricing h3 {
-    font-weight: 300;
-    margin-bottom: 15px;
-    font-size: 28px;
-  }
-  
-  .pricing h4 {
-    font-size: 46px;
-    color: #5a5af3;
-    font-weight: 400;
-    font-family: "Open Sans", sans-serif;
-    margin-bottom: 25px;
-  }
-  
-  .pricing h4 span {
-    color: #bababa;
-    font-size: 18px;
-    display: block;
-  }
-  
-  .pricing ul {
-    padding: 0;
-    list-style: none;
-    color: #999;
-    text-align: left;
-    line-height: 20px;
-  }
-  
-  .pricing ul li {
-    padding-bottom: 12px;
-  }
-  
-  .pricing ul i {
-    color: #5a5af3;
-    font-size: 18px;
-    padding-right: 4px;
-  }
-  
-  .pricing ul .na {
-    color: #ccc;
-  }
-  
-  .pricing ul .na i {
-    color: #ccc;
-  }
-  
-  .pricing ul .na span {
-    text-decoration: line-through;
-  }
-  
-  .pricing .btn-buy {
-    background: #434175;
-    display: inline-block;
-    padding: 10px 35px;
-    border-radius: 50px;
-    color: #fff;
-    transition: none;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: "Raleway", sans-serif;
-    transition: 0.3s;
-    border: none;
-  }
-  
-  .pricing .btn-buy:hover {
-    background: #5a5af3;
-  }
-  
-  .pricing .featured {
-    z-index: 10;
-    margin: -30px -5px 0 -5px;
-  }
-  
-  .pricing .featured .btn-buy {
-    background: #5a5af3;
-  }
-  
-  .pricing .featured .btn-buy:hover {
-    background: #7272f5;
-  }
-  
-  @media (max-width: 992px) {
-    .pricing .box {
-      max-width: 60%;
-      margin: 0 auto 30px auto;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .pricing .box {
-      max-width: 80%;
-      margin: 0 auto 30px auto;
-    }
-  }
-  
-  @media (max-width: 420px) {
-    .pricing .box {
-      max-width: 100%;
-      margin: 0 auto 30px auto;
-    }
   }
   
   /*--------------------------------------------------------------
