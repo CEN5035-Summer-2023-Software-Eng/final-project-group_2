@@ -14,3 +14,5 @@ Navbar items:
     Hover BG: lightgray
 
 Default section background: #faebff
+
+Footer background: #e3faea
