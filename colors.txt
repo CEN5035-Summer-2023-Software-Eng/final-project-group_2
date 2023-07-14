@@ -1,0 +1,14 @@
+Logo: #51c462
+
+Register button: 
+    Light: #D14AC2 
+    Dark: #a8399b
+
+Login button: 
+    Light: #51c462 
+    Dark: #3a9948
+
+Navbar items:
+    Default: #0D5611
+    Active: #4A051C
+    Hover BG: lightgray
