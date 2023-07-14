@@ -12,3 +12,5 @@ Navbar items:
     Default: #0D5611
     Active: #4A051C
     Hover BG: lightgray
+
+Default section background: #faebff

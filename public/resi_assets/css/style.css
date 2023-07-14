@@ -427,7 +427,7 @@ body {
   }
   
   .section-bg {
-    background-color: #eeeef5;
+    background-color: #faebff;
   }
   
   .section-title {
@@ -519,11 +519,11 @@ body {
     content: "";
     position: absolute;
     display: block;
-    width: 156px;
+    width: 158px;
     height: 3px;
     background: #0D5611;
     bottom: 5px;
-    left: calc(50% - 78px);
+    left: calc(50% - 79px);
   }
   
   .services .icon-box {
@@ -600,6 +600,17 @@ body {
   /*--------------------------------------------------------------
   # Team
   --------------------------------------------------------------*/
+  .team h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 108px;
+    height: 3px;
+    background: #0D5611;
+    bottom: 5px;
+    left: calc(50% - 54px);
+  }
+
   .team .member {
     margin-bottom: 20px;
     overflow: hidden;
@@ -607,35 +618,30 @@ body {
     border-radius: 5px;
     background: #fff;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .team .member .member-img {
-    position: relative;
-    overflow: hidden;
+    width: 100%; /* Set the width to occupy the full width of the container */
+    padding: 20px; /* Add equal padding on all sides */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    display: flex; /* Use flexbox to center the content vertically and horizontally */
+    justify-content: center;
+    align-items: center;
   }
   
   .team .member .social {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
     height: 40px;
-    opacity: 0;
-    transition: ease-in-out 0.3s;
     text-align: center;
     background: rgba(255, 255, 255, 0.85);
   }
   
   .team .member .social a {
     transition: color 0.3s;
-    color: #434175;
+    color: #a8399b;
     margin: 0 10px;
     padding-top: 8px;
     display: inline-block;
   }
   
   .team .member .social a:hover {
-    color: #5a5af3;
+    color: #4A051C;
   }
   
   .team .member .social i {
@@ -650,8 +656,8 @@ body {
   .team .member .member-info h4 {
     font-weight: 700;
     margin-bottom: 5px;
-    font-size: 18px;
-    color: #434175;
+    font-size: 22px;
+    color: #3a9948;
   }
   
   .team .member .member-info span {
@@ -659,17 +665,6 @@ body {
     font-size: 13px;
     font-weight: 400;
     color: #aaaaaa;
-  }
-  
-  .team .member .member-info p {
-    font-style: italic;
-    font-size: 14px;
-    line-height: 26px;
-    color: #777777;
-  }
-  
-  .team .member:hover .social {
-    opacity: 1;
   }
   
   /*--------------------------------------------------------------
