@@ -464,11 +464,25 @@ body {
   # About
   --------------------------------------------------------------*/
   .about .content h2 {
-    font-weight: 700;
-    font-size: 44px;
+    font-size: 38px;
+    font-weight: bold;
     line-height: 50px;
     margin-bottom: 20px;
-    color: #434175;
+    color: #a8399b;
+  }
+  
+  .underline {
+    position: relative;
+  }
+  
+  .underline::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 31%;
+    height: 3px;
+    background-color: #a8399b;
   }
   
   .about .content h3 {
@@ -492,103 +506,11 @@ body {
     top: 7px;
     position: absolute;
     font-size: 20px;
-    color: #5a5af3;
+    color: #51c462;
   }
   
   .about .content p:last-child {
     margin-bottom: 0;
-  }
-  
-  /*--------------------------------------------------------------
-  # Why Us
-  --------------------------------------------------------------*/
-  .why-us {
-    padding-top: 0;
-  }
-  
-  .why-us .box {
-    padding: 50px 30px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    transition: all ease-in-out 0.3s;
-  }
-  
-  .why-us .box span {
-    display: block;
-    font-size: 28px;
-    font-weight: 700;
-    color: #b9b9fa;
-  }
-  
-  .why-us .box h4 {
-    font-size: 24px;
-    font-weight: 600;
-    padding: 0;
-    margin: 20px 0;
-    color: #434175;
-  }
-  
-  .why-us .box p {
-    color: #aaaaaa;
-    font-size: 15px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .why-us .box:hover {
-    background: #5a5af3;
-    padding: 30px 30px 70px 30px;
-    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
-  }
-  
-  .why-us .box:hover span,
-  .why-us .box:hover h4,
-  .why-us .box:hover p {
-    color: #fff;
-  }
-  
-  /*--------------------------------------------------------------
-  # Counts
-  --------------------------------------------------------------*/
-  .counts {
-    padding: 70px 0 60px;
-  }
-  
-  .counts .count-box {
-    padding: 30px 30px 25px 30px;
-    width: 100%;
-    position: relative;
-    text-align: center;
-    background: #fff;
-  }
-  
-  .counts .count-box i {
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 24px;
-    background: #5a5af3;
-    color: #fff;
-    border-radius: 50px;
-    width: 48px;
-    height: 48px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .counts .count-box span {
-    font-size: 36px;
-    display: block;
-    font-weight: 600;
-    color: #0c0ca8;
-  }
-  
-  .counts .count-box p {
-    padding: 0;
-    margin: 0;
-    font-family: "Raleway", sans-serif;
-    font-size: 14px;
   }
   
   /*--------------------------------------------------------------
