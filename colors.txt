@@ -13,6 +13,8 @@ Navbar items:
     Active: #4A051C
     Hover BG: lightgray
 
-Default section background: #faebff
+Pink section background: #faebff
+
+Front section background: #c5fad5
 
 Footer background: #e3faea
