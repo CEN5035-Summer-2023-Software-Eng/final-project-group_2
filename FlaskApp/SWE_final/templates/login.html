@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/loginstyle.css') }}"/>
+</head>
+<body>
+
+    <h2 class="text-center mt-5">Login</h2>
+
+    <form id="login-form">
+      <div class="container mt-5">
+        <div class="form-group">
+            <label for="email"><b>Email</b></label>
+            <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+        <button type="button" class="btn btn-secondary btn-block mt-2" onclick="window.location.href='/register'">Register</button>
+      </div>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('#login-form').on('submit', function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/',
+                data: $('form').serialize(),
+                type: 'POST',
+                success: function(response) {
+                    if (response.status == 'success') {
+                        window.location.href = "/welcome/" + response.username + "+" + response.token;
+                    }
+                },
+                error: function(response) {
+                    alert(response.responseJSON.message);
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
