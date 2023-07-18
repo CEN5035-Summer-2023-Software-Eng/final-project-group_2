@@ -1,0 +1,49 @@
+{
+    "waste_types": [
+      {
+        "name": "Organic Waste",
+        "category": "Biodegradable",
+        "description": "This waste type includes food scraps, yard waste, and other natural materials. It can be composted to decompose naturally and turn into nutrient-rich soil."
+      },
+      {
+        "name": "Paper and Cardboard",
+        "category": "Biodegradable",
+        "description": "Paper and cardboard waste are biodegradable materials made from plant fibers. They can decompose naturally when exposed to moisture and microorganisms."
+      },
+      {
+        "name": "Textiles",
+        "category": "Biodegradable",
+        "description": "Textiles, like old clothing and fabrics, are biodegradable. While they may take longer to decompose than food waste, they will eventually break down naturally."
+      },
+      {
+        "name": "Wood",
+        "category": "Biodegradable",
+        "description": "Wood waste is biodegradable and can decompose naturally over time."
+      },
+      {
+        "name": "Electronics",
+        "category": "Non-Biodegradable",
+        "description": "This waste consists of electronic devices like computers, smartphones, and appliances. It should be taken to specialized e-waste recycling centers to ensure proper disposal and recovery of valuable materials."
+      },
+      {
+        "name": "Glass",
+        "category": "Non-Biodegradable",
+        "description": "Glass waste should be separated by color (clear, green, brown) and recycled at recycling centers. It can be reused to create new glass products."
+      },
+      {
+        "name": "Medical",
+        "category": "Non-Biodegradable",
+        "description": "This type of waste includes items like syringes, gloves, and other medical equipment. It requires careful handling and should be disposed of following strict guidelines to prevent potential health hazards."
+      },
+      {
+        "name": "Metal",
+        "category": "Non-Biodegradable",
+        "description": "Metal waste, such as cans and scrap metal, can be recycled at recycling facilities to conserve resources and reduce environmental impact."
+      },
+      {
+        "name": "Plastic",
+        "category": "Non-Biodegradable",
+        "description": "Plastic waste should be separated by type (PET, HDPE, etc.) and recycled at appropriate recycling facilities. Some types may not be recyclable, so reducing plastic consumption is also essential."
+      }
+    ]
+  }

@@ -1,0 +1,7 @@
+elasticsearch==8.8.2
+Flask==2.3.2
+numpy==1.24.3
+Pillow==10.0.0
+python-dotenv==1.0.0
+tensorflow==2.13.0
+tensorflow_macos==2.13.0
