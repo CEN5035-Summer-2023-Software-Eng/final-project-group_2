@@ -1,0 +1,338 @@
+/**
+* Template Name: Resi
+* Updated: May 30 2023 with Bootstrap v5.3.0
+* Template URL: https://bootstrapmade.com/resi-free-bootstrap-html-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #D14AC2;
+  }
+  
+  a:hover {
+    color: #a8399b;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif;
+  }
+  
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+  #header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 20px 0;
+    background: #fff;
+  }
+  
+  #header.header-scrolled,
+  #header.header-inner-pages {
+    padding: 12px 0;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  #header .logo {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #header .logo a {
+    color: #51c462;
+  }
+  
+  #header .logo img {
+    max-height: 40px;
+  }
+  
+  @media (max-width: 992px) {
+    #header {
+      padding: 12px 0;
+    }
+  }
+  
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  /**
+  * Desktop Navigation 
+  */
+  .navbar {
+    padding: 0;
+  }
+  
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .navbar li {
+    position: relative;
+  }
+  
+  .navbar a,
+  .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px 10px 15px;
+    font-size: 15px;
+    color: #0D5611;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+  
+  .navbar a i,
+  .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+  
+  .navbar a:hover,
+  .navbar .active,
+  .navbar .active:focus,
+  .navbar li:hover>a {
+    color: #4A051C;
+    background-color: lightgray;
+  }
+  
+  .navbar .register,
+  .navbar .login,
+  .navbar .register:focus,
+  .navbar .login:focus {
+    padding: 6px 25px;
+    margin-left: 20px;
+    border-radius: 50px;
+  }
+  
+  .navbar .register {
+    color: #fff;
+    background: #D14AC2;
+    border: none;
+  }
+  
+  .navbar .register:hover {
+    color:#fff;
+    background: #a8399b; 
+  }
+  
+  .navbar .login {
+    color: #fff;
+    background: #51c462;
+    border: none;
+  }
+  
+  .navbar .login:hover {
+    color:#fff;
+    background: #3a9948;
+  }
+  
+  /*--------------------------------------------------------------
+  # Classify Section
+  --------------------------------------------------------------*/
+  #classify {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #fff, #c5fad5);
+  }
+  
+  #classify .container {
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+  }
+
+/* Style for the left section */
+.left-section {
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+/* Style for the right section */
+.right-section {
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+  #classify h1 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 56px;
+    color: #0D5611;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #classify h2 {
+    margin: 10px 0 0 0;
+    font-size: 20px;
+  }
+  
+  #classify ul {
+    margin-top: 15px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  #classify ul li {
+    padding: 10px 0 0 28px;
+    position: relative;
+  }
+  
+  #classify ul i {
+    left: 0;
+    top: 7px;
+    position: absolute;
+    font-size: 20px;
+    color: #51c462;
+  }
+  
+  #classify .btn-sign-out {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding: 8px 30px 9px 30px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    transition: 0.5s;
+    border-radius: 50px;
+  }
+  
+  #classify .btn-sign-out {
+    background: #fff;
+    color: #a8399b;
+    border: 2px solid #a8399b;
+  }
+  
+  #classify .btn-sign-out:hover {
+    background: #a8399b;
+    color: #fff;
+  }
+  
+  @media (min-width: 1024px) {
+    #classify {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #classify h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  
+    #classify h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+  }
+
+  #classify p i {
+    font-size: 12px;
+  }
+  
+  @media (max-width: 575px) {
+    #classify {
+      text-align: center;
+    }
+  
+    #classify ul {
+      text-align: left;
+      font-size: 14px;
+    }
+  
+    #classify .btn-learn-more {
+      padding-left: 18px;
+      padding-right: 18px;
+      font-size: 14px;
+    }
+  }
+  
+  /*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+  section {
+    padding: 60px 0;
+  }
+  
+  .section-bg {
+    background-color: #faebff;
+  }
+  
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .section-title h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #0D5611;
+  }
+  
+  .section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: #0D5611;
+    bottom: 0;
+    left: calc(50% - 25px);
+  }
+  
+  .section-title p {
+    margin-bottom: 0;
+  }
+  
+  /*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+  #footer {
+    background: #e3faea;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  #footer .credits {
+    padding-top: 5px;
+    font-size: 13px;
+    color: #0D5611;
+  }
+  
+  #footer .credits a {
+    transition: 0.3s;
+  }
