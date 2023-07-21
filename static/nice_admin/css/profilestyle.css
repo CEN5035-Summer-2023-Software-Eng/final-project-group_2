@@ -289,7 +289,7 @@ body {
   
   .profile .profile-overview .row {
     margin-bottom: 20px;
-    font-size: 15px;
+    font-size: 16px;
   }
   
   .profile .profile-overview .card-title {
@@ -337,6 +337,23 @@ body {
     height: auto;
     display: block;
     margin: 0 auto;
+}
+
+#prediction-results {
+    font-size: 16px;
+    color: #444444;
+    margin-bottom: 20px;
+}
+
+#prediction-results h2 {
+    font-size: 16px;
+    color:#4A051C;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#prediction-results p {
+    margin-bottom: 10px;
 }
   
   /*--------------------------------------------------------------
