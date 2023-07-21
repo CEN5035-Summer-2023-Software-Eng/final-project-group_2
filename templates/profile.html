@@ -111,16 +111,18 @@
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-2 col-form-label file-upload">File Upload</label>
                             <div class="col-sm-10">
-                              <input class="form-control" type="file" id="formFile">
+                              <input class="form-control" type="file" id="image-upload">
                             </div>
                         </div>
-                        
+                       
                         <div class="row mb-3">
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-predict">Predict</button>
+                                <button type="button" class="btn btn-predict" id="predict-button">Predict</button>
                             </div>
                         </div>
-                    </form>
+                    </form> 
+                    <div id="prediction-results"></div>
+                    <img id="displayed-image" src="">
                   </div>
   
                   <div class="tab-pane fade profile-edit pt-3" id="locations">
@@ -344,6 +346,26 @@
 
   <!-- Template Main JS File -->
   <script src="{{ url_for('static', filename='nice_admin/js/main.js') }}"></script>
+
+  <script>
+    document.getElementById("predict-button").addEventListener("click", async () => {
+            // Get uploaded file
+            const imageFile = document.getElementById("image-upload").files[0];
+            // Check if the file exists
+            if (!imageFile) {
+                alert("Please select an image file.");
+                return;
+            }
+            // Read and display that image
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const imageSource = event.target.result;
+                document.getElementById("displayed-image").src = imageSource;
+            };
+            reader.readAsDataURL(imageFile);
+    });
+  </script>
+
 
 
 </body>
