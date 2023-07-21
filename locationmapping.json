@@ -1,23 +1,17 @@
 {
 	"mappings" : {
 		"properties" : {
-            "SiteName": {"type": "text"},
-            "SiteType": {"type": "text"},
-            "Borough": {"type": "text"},
-            "SiteAddress": {"type": "text"},
+            "SiteName": {"type": "keyword"},
+            "SiteType": {"type": "keyword"},
+            "Borough": {"type": "keyword"},
+            "SiteAddress": {"type": "keyword"},
             "Zipcode": {"type": "text"},
             "PhoneNumber": {"type": "text"},
             "DayHours": {"type": "text"},
             "Note": {"type": "text"},
             "Latitude": {"type": "float"},
             "Longitude": {"type": "float"},
-            "pin": {
-                "properties": {
-                  "location": {
-                    "type": "geo_point"
-                  }
-                }
-              }
+            "Location": {"type": "geo_point"}
 		}
 	}
 }
