@@ -348,6 +348,18 @@
   <script src="{{ url_for('static', filename='nice_admin/js/main.js') }}"></script>
 
   <script>
+    function displayPredictionResults() {
+            const predictionResults = document.getElementById("prediction-results");
+            predictionResults.innerHTML = `
+                <p><b>Prediction Results:</b></p>
+                <p>Waste Type: ${"Plastic"}</p>
+                <p>Category: ${"It's bad."}</p>
+                <p>Confidence Score: ${"110%"}</p>
+                <p>Description: ${"It's plastic plastic."}</p>
+            `;
+    }
+    
+
     document.getElementById("predict-button").addEventListener("click", async () => {
             // Get uploaded file
             const imageFile = document.getElementById("image-upload").files[0];
@@ -361,6 +373,7 @@
             reader.onload = function (event) {
                 const imageSource = event.target.result;
                 document.getElementById("displayed-image").src = imageSource;
+                displayPredictionResults();
             };
             reader.readAsDataURL(imageFile);
     });
