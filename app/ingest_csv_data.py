@@ -59,8 +59,8 @@ def format_documents(csv_reader):
             'Note': row.get('Notes', None),
             'Latitude': row.get('Latitude', None),
             'Longitude': row.get('Longitude', None),
-            'pin': {'location': { 'lat': float(row.get('Latitude', 0.0)), "lon": float(row.get('Longitude', 0.0))}}
-            #'location': {"lat": float(row.get('Latitude', 0.0)), "lon": float(row.get('Longitude', 0.0))}
+            #'pin': {'location': { 'lat': float(row.get('Latitude', 0.0)), "lon": float(row.get('Longitude', 0.0))}}
+            'Location': {"lat": float(row.get('Latitude', 0.0)), "lon": float(row.get('Longitude', 0.0))}
         }
         yield doc # Generate values one at a time
 
