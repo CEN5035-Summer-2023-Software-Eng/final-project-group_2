@@ -47,10 +47,6 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="classify" href="/classify.html">Classify</a></li>
-          <li><a class="locations" href="/locations.html">Drop-off Locations</a></li>
-          <li><a class="history" href="/history.html">History</a></li>
-          <li><a class="portfolio" href="/portfolio.html">Portfolio</a></li>
           <li><a class="signout" href="#" onclick="window.location.href='/'">Sign out</a></li>
         </ul>
       </nav><!-- .navbar -->
@@ -89,68 +85,45 @@
                 <ul class="nav nav-tabs nav-tabs-bordered">
   
                   <li class="nav-item">
-                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#classify">Classify</button>
                   </li>
   
                   <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#locations">Drop-off Locations</button>
                   </li>
   
                   <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#history">History</button>
                   </li>
   
                   <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#portfolio">Portfolio</button>
                   </li>
   
                 </ul>
                 <div class="tab-content pt-2">
   
-                  <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                    <h5 class="card-title">About</h5>
-                    <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
-  
-                    <h5 class="card-title">Profile Details</h5>
-  
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                      <div class="col-lg-9 col-md-8">Kevin Anderson</div>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Company</div>
-                      <div class="col-lg-9 col-md-8">Lueilwitz, Wisoky and Leuschke</div>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Job</div>
-                      <div class="col-lg-9 col-md-8">Web Designer</div>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Country</div>
-                      <div class="col-lg-9 col-md-8">USA</div>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Address</div>
-                      <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Phone</div>
-                      <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Email</div>
-                      <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
-                    </div>
-  
+                  <div class="tab-pane fade show active profile-overview" id="classify">
+                    <h5 class="card-title">Upload Waste Here</h5>
+                    <p class="small fst-italic">Upload a picture of waste, and we will provide the classification details.</p>
+                    
+                    <form id="upload-form" enctype="multipart/form-data">
+                        <div class="row mb-3">
+                            <label for="inputNumber" class="col-sm-2 col-form-label file-upload">File Upload</label>
+                            <div class="col-sm-10">
+                              <input class="form-control" type="file" id="formFile">
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-predict">Predict</button>
+                            </div>
+                        </div>
+                    </form>
                   </div>
   
-                  <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                  <div class="tab-pane fade profile-edit pt-3" id="locations">
   
                     <!-- Profile Edit Form -->
                     <form>
@@ -256,7 +229,7 @@
   
                   </div>
   
-                  <div class="tab-pane fade pt-3" id="profile-settings">
+                  <div class="tab-pane fade pt-3" id="history">
   
                     <!-- Settings Form -->
                     <form>
@@ -298,7 +271,7 @@
   
                   </div>
   
-                  <div class="tab-pane fade pt-3" id="profile-change-password">
+                  <div class="tab-pane fade pt-3" id="portfolio">
                     <!-- Change Password Form -->
                     <form>
   

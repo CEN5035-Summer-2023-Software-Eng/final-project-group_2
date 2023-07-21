@@ -309,6 +309,27 @@ body {
   .profile .profile-edit img {
     max-width: 120px;
   }
+
+  .profile .file-upload,
+  .form-control {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .profile .btn-predict {
+    color: #fff;
+    background: #51c462;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50px;
+  }
+  
+  .profile .btn-predict:hover {
+    color:#fff;
+    background: #3a9948; 
+  }
+
   
   /*--------------------------------------------------------------
   # Footer
