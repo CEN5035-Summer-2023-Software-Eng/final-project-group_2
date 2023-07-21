@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="resi_assets/css/loginstyle.css" rel="stylesheet"> <!--Change when in main branch-->
+    <link href="{{ url_for('static', filename='login/css/loginstyle.css') }}" rel="stylesheet">
 </head>
 <body>
 
@@ -23,7 +23,8 @@
                 <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <!--Temporary onclick redirects -->
+            <button type="submit" class="btn btn-primary btn-block" onclick="window.location.href='/profile'">Login</button>
             <button type="button" class="btn btn-secondary btn-block mt-2" onclick="window.location.href='/'">No account? Go register!</button>
         </div>
     </form>
