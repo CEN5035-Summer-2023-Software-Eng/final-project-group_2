@@ -184,7 +184,7 @@ def search_location():
                 query={
                     "bool": {
                         "filter": [
-                            {"term": {"SiteType.keyword": SiteType}}
+                            {"term": {"SiteType": SiteType}}
                         ],
                         "must": [
                             {"multi_match": {
@@ -226,7 +226,7 @@ def get_unique_sitetypes():
             aggs={
                     "unique_values": {
                         "terms": {
-                            "field": "SiteType.keyword"  # Use ".keyword" for keyword fields to get exact matches
+                            "field": "SiteType"
                         }
                     }
                 }
