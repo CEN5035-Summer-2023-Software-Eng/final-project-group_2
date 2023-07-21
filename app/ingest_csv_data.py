@@ -2,6 +2,7 @@ from elasticsearch import Elasticsearch, helpers
 import csv
 from dotenv import find_dotenv, load_dotenv
 import os
+
 # Load environment from .env file
 env_elastic = find_dotenv(".env")
 load_dotenv(env_elastic)
