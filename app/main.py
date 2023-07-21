@@ -27,8 +27,8 @@ es = Elasticsearch(
 
 # Directory to store the images locally (we can remove this later since we will store the image in elastic search)
 IMAGES_DIR = "./wasteimages/"
-if not os.path.exists(IMAGES_DIR):
-    os.makedirs(IMAGES_DIR)
+#if not os.path.exists(IMAGES_DIR):
+#    os.makedirs(IMAGES_DIR)
 
 
 
@@ -126,28 +126,40 @@ def display_image(image_id):
         return jsonify({"error": str(e)}), 500
 
 
-# Function to read JSON file and get waste type information
-def get_waste_info(waste_type):
-    with open('./wasteinfo.json', 'r') as file:
-        data = json.load(file)
-    for item in data['waste_types']:
-        if item['name'].lower() == waste_type.lower():
-            return item['category'], item['description']
-    return None, None
-
-
 # GET waste type information given waste type
 @app.route("/waste/<waste_type>", methods=["GET"])
 def get_waste_type_info(waste_type):
-    category, description = get_waste_info(waste_type)
-    if category and description:
-        return jsonify({
-            "waste_type": waste_type,
-            "category": category,
-            "description": description
-        })
-    else:
-        return jsonify({"error": f"{waste_type} was not found in the waste types data."}), 404
+
+    try:
+        # Search for waste_type info 
+        res = es.search(
+            index='wasteinfo',
+            query={
+                    "bool": {
+                        "should": [
+                            {
+                                "regexp": {
+                                    "waste_type": {
+                                        "value": f".*{waste_type}.*",
+                                        "flags": "ALL",
+                                        "case_insensitive": True
+                                    }
+                                }
+                            }
+                        ]
+                    }
+            }
+        )
+        # Store the results
+        # Check if a matching document was found
+        if res['hits']['total']['value'] > 0:
+            source = res['hits']['hits'][0]['_source']
+            return jsonify(source)
+        else:
+            return jsonify({"error": f"{waste_type} was not found in the waste types data."}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
 
 # POST request that returns drop-off locations based on SiteType and Zipcode
 @app.route("/searchByZipCodeSiteType", methods=["POST"])
