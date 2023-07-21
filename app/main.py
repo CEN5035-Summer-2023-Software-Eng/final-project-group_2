@@ -296,8 +296,7 @@ def search_info():
                                     }
                                 }
                             }
-                        ],
-                        "minimum_should_match": 1  # Require at least one of the 'should' clauses to match
+                        ]
                     }
                 }
         )
