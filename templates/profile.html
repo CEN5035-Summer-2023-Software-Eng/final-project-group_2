@@ -103,7 +103,7 @@
                 </ul>
                 <div class="tab-content pt-2">
   
-                  <div class="tab-pane fade show active profile-overview" id="classify">
+                  <div class="tab-pane fade show active classify" id="classify">
                     <h5 class="card-title">Upload Waste Here</h5>
                     <p class="small fst-italic">Upload a picture of waste, and we will provide the classification details.</p>
                     
@@ -125,25 +125,39 @@
                     <img id="displayed-image" src="">
                   </div>
   
-                  <div class="tab-pane fade profile-edit pt-3" id="locations">
+                  <div class="tab-pane fade locations pt-3" id="locations">
+
+                    <h5 class="card-title">Find Drop-off Locations</h5>
+                    <p class="small fst-italic">Enter your nearest ZIP Code, and we will find your closest drop-off locations</p>
   
-                    <!-- Profile Edit Form -->
-            
-  
-                      <div class="row mb-3">
+                      <!--<div class="row mb-3">-->
                         <form id="dropoff-search-form">
-                            <label for="zipcode">Enter Zipcode:</label>
-                            <input type="text" id="zipcode" name="zipcode" required>
-                            <label for="sitetype">Choose Site Type:</label>
-                            <select id="sitetype" name="sitetype">
-                            </select>
-                            <button type="submit">Search</button>
+                            <div class="row mb-3">
+                                <label for="zipcode" class="col-sm-2 col-form-label location-input-one">ZIP Code</label>
+                                <div class="col-sm-10">
+                                  <input type="number" class="form-control" id ="zipcode" name="zipcode" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="sitetype" class="col-sm-2 col-form-label location-input-two">Site Type</label>
+                                <div class="col-sm-10">
+                                  <select id="sitetype" name="sitetype" lass="form-select" aria-label="Default select example">
+                                  </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-find" id="find-button">Find Locations</button>
+                                </div>
+                            </div>
                         </form>
                   
                         <div id="dropoff-results">
                             <!-- Results will be displayed here -->
                             <h3>Search Results:</h3>
-                            <table id="dropoff-result-table" class="table table-bordered">
+                            <table id="dropoff-result-table" class="custom-table">
                                 <thead>
                                     <tr>
                                         <th>Site Name</th>
@@ -152,14 +166,14 @@
                                         <th>Site Address</th>
                                         <th>Zipcode</th>
                                         <th>Phone Number</th>
-                                        <th>Day Hours</th>
+                                        <th>Days/Hours</th>
                                         <th>Note</th>
                                     </tr>
                                 </thead>
                                 <tbody><!-- Table rows will be added here --></tbody>
                             </table>
                         </div>
-                      </div>
+                    <!--  </div>-->
   
                       
   
@@ -348,7 +362,7 @@
 
                 // Check if found any result
                 if (results.length === 0) {
-                    tableBody.append("<tr><td colspan='8'>No results found for the provided Zipcode and SiteType.</td></tr>");
+                    tableBody.append("<tr><td colspan='8'>No results found for the provided ZIP Code and Site Type.</td></tr>");
                     return;
                 }
 
@@ -388,10 +402,20 @@
                   alert("Error occurred while fetching SiteTypes: " + error.responseJSON.error);
               });
       }
-      // Populate SiteType dropdown and perform drop-off search
+
+      // Function to handle form submission and display results
+      function handleFormSubmission(event) {
+          event.preventDefault();
+          performDropoffSearch(event); // Call the search function you already have
+
+          // Show the results container after form submission
+          $("#dropoff-results").show();
+      }
+
+      // Attach the handleFormSubmission function to the form submission event
       $(document).ready(function () {
           populateSiteTypes();
-          $("#dropoff-search-form").on("submit", performDropoffSearch);
+          $("#dropoff-search-form").on("submit", handleFormSubmission);
       });
 
       /////// History Tab  ///////
