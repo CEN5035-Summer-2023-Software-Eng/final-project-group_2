@@ -3,8 +3,8 @@
 		"properties" : {
 			"waste_id" : {"type": "text" },
 			"username" : {"type": "text"},
-			"waste_type" : {"type": "text" },
-			"confidence_score" : {"type": "text" },
+			"waste_type" : {"type": "keyword" },
+			"confidence_score" : {"type": "float" },
 			"image_filename" : { "type" : "text" },
 			"image_path" : { "type" : "text" },
 			"date": { "type" : "date" },
