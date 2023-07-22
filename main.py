@@ -91,7 +91,7 @@ def register():
 def profile(username, token):
     if(token == session['token'] and username == session['user']):
         print("Correct Token")
-        return render_template('main/profile.html')
+        return render_template('profile.html')
     else:
         return render_template('login.html')
     
@@ -380,7 +380,7 @@ def search_info():
                         "filter": [
                             {"term": {"username": username.split("@")[0]}}   # Filter by username and field   
                         ],
-                        "should": [
+                        "must": [
                             {
                                 "regexp": {
                                     f"{field}": {
@@ -417,7 +417,7 @@ def count_unique_values_by_field(data_list,field_name):
     for item in data_list:
         value = item.get(field_name)
         if value:
-            counts_dict[value] = counts_dict.get(field_name,0) + 1
+            counts_dict[value] = counts_dict.get(value, 0) + 1
     return counts_dict
 
 # GET request to get number of unique values within a field name based on username (Portfolio Tab)
@@ -434,7 +434,8 @@ def get_num_unique():
     if not username or not field_name:
         return jsonify({"error": "Please specify both username and field_name!"}), 404
     # Validate field_name:
-    accepted_field_name = ["image_id","waste_type","confidence_score","image_filename"]
+    accepted_field_name = ["image_id","waste_type","image_filename"]
+
     if field_name not in accepted_field_name:
         return jsonify({"error": "The field_name you entered was not valid!"}), 404
     
@@ -446,7 +447,7 @@ def get_num_unique():
             query={
                     "bool": {
                         "must": [
-                            {"match": {"username": username}}
+                            {"match": {"username": username.split("@")[0]}}
                         ]}
             }
         )
