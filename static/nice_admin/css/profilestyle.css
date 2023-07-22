@@ -211,7 +211,7 @@ body {
     padding: 20px 0 15px 0;
     font-size: 18px;
     font-weight: 500;
-    color: #0D5611;
+    color: #4A051C;
     font-family: "Poppins", sans-serif;
   }
   
@@ -256,10 +256,10 @@ body {
 /*--------------------------------------------------------------
 # Profie Page
 --------------------------------------------------------------*/
-.profile {
+  .profile {
     margin-top: 45px;
- } 
-.profile .profile-card img {
+  } 
+  .profile .profile-card img {
     max-width: 120px;
   }
   
@@ -286,34 +286,25 @@ body {
   .profile .profile-card .social-links a:hover {
     color: #a8399b;
   }
-  
-  .profile .profile-overview .row {
+
+  .profile .row {
     margin-bottom: 20px;
     font-size: 16px;
   }
-  
-  .profile .profile-overview .card-title {
-    color: #4A051C;
-  }
-  
-  .profile .profile-overview .label {
-    font-weight: 600;
-    color: #4A051C;
-  }
-  
-  .profile .profile-edit label {
-    font-weight: 600;
-    color: #4A051C;
-  }
-  
-  .profile .profile-edit img {
-    max-width: 120px;
-  }
+
+/*--------------------------------------------------------------
+# Classify Page
+--------------------------------------------------------------*/
 
   .profile .file-upload,
   .form-control {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  .classify .file-upload {
+    font-weight: 600;
+    color: #4A051C;
   }
 
   .profile .btn-predict {
@@ -355,7 +346,88 @@ body {
 #prediction-results p {
     margin-bottom: 10px;
 }
+
+/*--------------------------------------------------------------
+# Locations Page
+--------------------------------------------------------------*/
+  .locations label {
+    font-weight: 600;
+    color: #4A051C;
+  }
   
+  .locations .card-title {
+    padding: 4px 0 15px 0;
+  }
+
+  .locations img {
+    max-width: 120px;
+  }
+
+  .locations .location-input-one, 
+  .form-control {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .locations .location-input-two, 
+  .form-select {
+    margin-bottom: 20px;
+  }
+
+  .profile .btn-find {
+    color: #fff;
+    background: #51c462;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50px;
+    padding: 6px 25px;
+    margin-left: 325px;
+  }
+  
+  .profile .btn-find:hover {
+    color:#fff;
+    background: #3a9948; 
+  }
+
+  .locations .form-select {
+    width: auto;
+  }
+
+  .custom-table {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .custom-table tbody tr:nth-child(even) {
+    background-color: #f9eafd;
+  }
+
+  .custom-table tbody tr:nth-child(odd) {
+    background-color: #fdf5ff;
+  }
+
+  .custom-table thead tr {
+    background-color: #e29dda;
+  }
+
+  .custom-table th,
+  .custom-table td {
+    text-align: center;
+  }
+
+  .custom-table {
+    border-collapse: collapse;
+  }
+
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #979e98;
+    padding: 8px;
+  }
+
+
   /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
