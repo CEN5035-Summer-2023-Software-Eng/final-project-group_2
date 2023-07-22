@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CleanAI - User Profile</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='styles/resi/img/favicon.png') }}" rel="icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='styles/nice_admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/nice_admin/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/nice_admin/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/nice_admin/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/nice_admin/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/nice_admin/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/nice_admin/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='styles/nice_admin/css/profilestyle.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Resi
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/resi-free-bootstrap-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="#" onclick="window.location.href='/'">CleanAI</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="signout" href="#" onclick="window.location.href='/'">Sign out</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+      <section class="section profile">
+        <div class="row">
+          <div class="col-xl-4">
+  
+            <div class="card">
+              <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+  
+                <img src="{{ url_for('static', filename='styles/nice_admin/img/profile-img.png') }}" alt="Profile" class="rounded-circle">
+                <h2>Full Name</h2>
+                <h3>Email</h3>
+                <div class="social-links mt-2">
+                  <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                  <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+          <div class="col-xl-8">
+  
+            <div class="card">
+              <div class="card-body pt-3">
+                <!-- Bordered Tabs -->
+                <ul class="nav nav-tabs nav-tabs-bordered">
+  
+                  <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#classify">Classify</button>
+                  </li>
+  
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#locations">Drop-off Locations</button>
+                  </li>
+  
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#history">History</button>
+                  </li>
+  
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#portfolio">Portfolio</button>
+                  </li>
+  
+                </ul>
+                <div class="tab-content pt-2">
+  
+                  <div class="tab-pane fade show active profile-overview" id="classify">
+                    <h5 class="card-title">Upload Waste Here</h5>
+                    <p class="small fst-italic">Upload a picture of waste, and we will provide the classification details.</p>
+                    
+                    <form id="upload-form" enctype="multipart/form-data">
+                        <div class="row mb-3">
+                            <label for="inputNumber" class="col-sm-2 col-form-label file-upload">File Upload</label>
+                            <div class="col-sm-10">
+                              <input class="form-control" type="file" id="image-upload">
+                            </div>
+                        </div>
+                       
+                        <div class="row mb-3">
+                            <div class="col-sm-10">
+                                <button type="button" class="btn btn-predict" id="predict-button">Predict</button>
+                            </div>
+                        </div>
+                    </form> 
+                    <div id="prediction-results"></div>
+                    <img id="displayed-image" src="">
+                  </div>
+  
+                  <div class="tab-pane fade profile-edit pt-3" id="locations">
+  
+                    <!-- Profile Edit Form -->
+            
+  
+                      <div class="row mb-3">
+                        <form id="dropoff-search-form">
+                            <label for="zipcode">Enter Zipcode:</label>
+                            <input type="text" id="zipcode" name="zipcode" required>
+                            <label for="sitetype">Choose Site Type:</label>
+                            <select id="sitetype" name="sitetype">
+                            </select>
+                            <button type="submit">Search</button>
+                        </form>
+                  
+                        <div id="dropoff-results">
+                            <!-- Results will be displayed here -->
+                            <h3>Search Results:</h3>
+                            <table id="result-table" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Site Name</th>
+                                        <th>Site Type</th>
+                                        <th>Borough</th>
+                                        <th>Site Address</th>
+                                        <th>Zipcode</th>
+                                        <th>Phone Number</th>
+                                        <th>Day Hours</th>
+                                        <th>Note</th>
+                                    </tr>
+                                </thead>
+                                <tbody><!-- Table rows will be added here --></tbody>
+                            </table>
+                        </div>
+                      </div>
+  
+                      
+  
+                  </div>
+  
+                  <div class="tab-pane fade pt-3" id="history">
+  
+                    <!-- History Tab Content -->
+                    <div class="row mb-3">
+                      <form id="history-search-form">
+                          <!-- Drop-down to choose the field -->
+                          <label for="field">Choose a Field:</label>
+                          <select id="field" name="field">
+                          </select>
+                          <!-- Input field for the search query -->
+                          <label for="query">Enter Search Query:</label>
+                          <input type="text" id="query" name="query" required>
+                          <button type="submit">Search</button>
+                      </form>
+
+                      <div id="history-results">
+                          <h3>Search Results:</h3>
+                          <table id="result-table" class="table table-bordered">
+                              <thead>
+                                  <tr>
+                                      <!-- Table headers will be populated here -->
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <!-- Table rows will be added here -->
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+                    
+                    <!-- End History Form -->
+  
+                  </div>
+  
+                  <div class="tab-pane fade pt-3" id="portfolio">
+                    <!-- Change Password Form -->
+  
+                      <div class="text-center">
+                        <canvas id="pie-chart" width="400" height="400"></canvas>
+                      </div>
+
+  
+                  </div>
+  
+                </div><!-- End Bordered Tabs -->
+  
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/resi-free-bootstrap-html-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='styles/nice_admin/vendor/apexcharts/apexcharts.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='styles/nice_admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='styles/nice_admin/vendor/chart.js/chart.umd.js') }}"></script>
+  <script src="{{ url_for('static', filename='styles/nice_admin/vendor/echarts/echarts.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='styles/nice_admin/vendor/quill/quill.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='styles/nice_admin/vendor/simple-datatables/simple-datatables.js') }}"></script>
+  <script src="{{ url_for('static', filename='styles/nice_admin/vendor/tinymce/tinymce.min.js') }}"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='styles/nice_admin/js/main.js') }}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <!-- Add the Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    
+    /////// Classify Tab  ///////
+    // Function to handle the form submission for predicting waste
+    function predictImage() {
+      event.preventDefault();
+      // Get the file from the form input
+      const fileInput = document.getElementById('image-upload');
+      const file = fileInput.files[0];
+      // Check if user uploads the file
+      if (!file) {
+        alert('Please select an image to predict.');
+        return;
+      }
+      // Create a FormData object to send the file and other data
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('username', '{{ session["user"] }}');
+
+      // Send the POST request to the /predict/image endpoint
+      fetch('/predict/image', {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error in prediction request: ' + response.status);
+        }
+        return response.json();
+      })
+      .then(predictionData => {
+         // Get the waste type from the prediction data
+         const wasteType = predictionData.waste_type;
+        // Now call the /waste/<waste_type> API to get waste type information
+        fetch(`/waste/${wasteType}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Error in getting waste type information: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(wasteTypeInfo => {
+            // Handle the waste type information results
+            //console.log(wasteTypeInfo); 
+            const predictionResults = document.getElementById('prediction-results');
+            predictionResults.innerHTML = `
+                <h2>Prediction Results:</h2>
+                <p>Waste Type: ${predictionData.waste_type}</p>
+                <p>Category: ${wasteTypeInfo.category}</p>
+                <p>Confidence Score: ${predictionData.confidence_score}</p>
+                <p>Description: ${wasteTypeInfo.description}</p>
+            `;
+            // Read and display that image
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const imageSource = event.target.result;
+                document.getElementById("displayed-image").src = imageSource;
+            };
+            reader.readAsDataURL(file);
+          })
+        .catch(error => {
+          console.error('Error:', error.message);
+          alert('Error occurred while fetching waste type information: ' + error.message);
+        });
+      
+      })
+        .catch(error => {
+          console.error('Error:', error.message);
+          alert('Error occurred during prediction: ' + error.message);
+        });
+    }
+
+    // Event listener for the Predict button
+    document.getElementById('predict-button').addEventListener('click', predictImage);
+
+
+    /////// Drop-off Tab  ///////
+    // Function to perform the drop-off search
+    function performDropoffSearch(event) {
+        event.preventDefault();
+        // Get the form data
+        const formData = {
+            Zipcode: $("#zipcode").val(),
+            SiteType: $("#sitetype").val()
+        };
+
+        // Make the POST request to the API
+        $.post("/searchByZipCodeSiteType", formData)
+            .done(function (results) {
+                const tableBody = $("#result-table tbody");
+                tableBody.empty();
+
+                // Check if found any result
+                if (results.length === 0) {
+                    tableBody.append("<tr><td colspan='8'>No results found for the provided Zipcode and SiteType.</td></tr>");
+                    return;
+                }
+
+                // Populate the table with the search results
+                results.forEach(result => {
+                    tableBody.append(`
+                        <tr>
+                            <td>${result.SiteName || "N/A"}</td>
+                            <td>${result.SiteType || "N/A"}</td>
+                            <td>${result.Borough || "N/A"}</td>
+                            <td>${result.SiteAddress || "N/A"}</td>
+                            <td>${result.Zipcode || "N/A"}</td>
+                            <td>${result.PhoneNumber || "N/A"}</td>
+                            <td>${result.DayHours || "N/A"}</td>
+                            <td>${result.Note || "N/A"}</td>
+                        </tr>
+                    `);
+                });
+            })
+            .fail(function (error) {
+                alert("Error occurred during search: " + error.responseJSON.error);
+            });
+    }
+
+      // Function to populate the SiteType dropdown
+      function populateSiteTypes() {
+          // Make the GET request to the API to get unique values for SiteType
+          $.get("/findAllSiteTypes")
+              .done(function (data) {
+                  const sitetypeSelect = $("#sitetype");
+                  // Populate the dropdown with unique values of SiteTypes
+                  data.forEach(sitetype => {
+                      sitetypeSelect.append(`<option value="${sitetype}">${sitetype}</option>`);
+                  });
+              })
+              .fail(function (error) {
+                  alert("Error occurred while fetching SiteTypes: " + error.responseJSON.error);
+              });
+      }
+      // Populate SiteType dropdown and perform drop-off search
+      $(document).ready(function () {
+          populateSiteTypes();
+          $("#dropoff-search-form").on("submit", performDropoffSearch);
+      });
+
+      /////// History Tab  ///////
+      // Function to populate the field drop-down for the History Tab
+      function populateFieldDropdown() {
+        // Make the GET request to the API to get all field names
+        $.get("/findAllWasteFields/wasteclassified")
+            .done(function (fields) {
+                const fieldDropdown = $("#field");
+                fieldDropdown.empty();
+                fields.forEach(field => {
+                    fieldDropdown.append(`<option value="${field}">${field}</option>`);
+                });
+            })
+            .fail(function (error) {
+                alert("Error occurred while fetching field names: " + error.responseJSON.error);
+            });
+      }
+
+      // Function to handle the form submission and perform the search for the History Tab
+      function performHistorySearch(event) {
+          event.preventDefault();
+
+          // Get the form data
+          const formData = {
+              field: $("#field").val(),
+              query: $("#query").val()
+          };
+
+          // Make the POST request to the API
+          $.post("/findInfoByUsernameAndField", formData)
+              .done(function (results) {
+                  const tableHead = $("#result-table thead tr");
+                  const tableBody = $("#result-table tbody");
+                  tableHead.empty();
+                  tableBody.empty();
+
+                  if (results.length === 0) {
+                      tableBody.append("<tr><td colspan='8'>No results found.</td></tr>");
+                      return;
+                  }
+
+                  // Populate the table header dynamically
+                  const tableHeaders = Object.keys(results[0]);
+                  tableHeaders.forEach(header => {
+                      tableHead.append(`<th>${header}</th>`);
+                  });
+
+                  // Populate the table with the search results
+                  results.forEach(result => {
+                      const rowHtml = tableHeaders.map(header => {
+                          return `<td>${result[header] || "N/A"}</td>`;
+                      }).join("");
+                      tableBody.append(`<tr>${rowHtml}</tr>`);
+                  });
+              })
+              .fail(function (error) {
+                  alert("Error occurred during search: " + error.responseJSON.error);
+              });
+      }
+      // Populate waste field dropdown and perform history search
+      $(document).ready(function () {
+          populateFieldDropdown();
+          $("#history-search-form").on("submit", performHistorySearch);
+      });
+
+      /////// Portfolio Tab  ///////
+      // Function to fetch data and create the pie chart
+      function createPieChart() {
+        // Display pie chart for waste_type, we can change this to another field name to display other fields
+        const field_name = "waste_type"; 
+        // Make API call
+        fetch(`/findNumUniqueValuesWithinFieldByUsername?field_name=${field_name}`)
+          .then((response) => response.json())
+          .then((data) => {
+            const labels = Object.keys(data);
+            const counts = Object.values(data);
+
+            // Create the pie chart
+            const ctx = document.getElementById("pie-chart").getContext("2d");
+            const myPieChart = new Chart(ctx, {
+              type: "pie",
+              data: {
+                labels: labels,
+                datasets: [
+                  {
+                    data: counts,
+                    backgroundColor: [
+                      "#FF6384",
+                      "#36A2EB",
+                      "#FFCE56",
+                      // Add more colors if needed
+                    ],
+                    borderWidth: 1,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+              },
+            });
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+      // Call the function when the document is ready
+      document.addEventListener("DOMContentLoaded", createPieChart);
+
+  </script>
+
+
+</body>
+
+</html>

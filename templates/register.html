@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href= "{{ url_for('static',filename='icon.png') }}"/>
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/loginstyle.css') }}"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+</head>
+<body>
+
+    <h2 class="text-center mt-5">Register</h2>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <div class="container mt-5">
+            <div class="form-group">
+                <label for="email"><b>Email</b></label>
+                <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <button type="button" class="btn btn-secondary btn-block mt-2" onclick="window.location.href='/'">Back to Home</button>
+        </div>
+    </form>
+
+</body>
+</html>
