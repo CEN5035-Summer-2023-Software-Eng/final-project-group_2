@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waste Classification</title>
+</head>
+<body>
+    <h1>Upload an image for classification</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="file" id="image-upload">
+        <button type="button" id="predict-btn">Predict</button>
+    </form>
+
+    <div id="prediction-results"></div>
+    <img id="displayed-image" src="">
+
+    
+
+    <script>
+        document.getElementById("predict-btn").addEventListener("click", async () => {
+            // Get uploaded file
+            const imageFile = document.getElementById("image-upload").files[0];
+            // Check if the file exists
+            if (!imageFile) {
+                alert("Please select an image file.");
+                return;
+            }
+            // Read and display that image
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const imageSource = event.target.result;
+                document.getElementById("displayed-image").src = imageSource;
+            };
+            reader.readAsDataURL(imageFile);
+
+            // Store the file data
+            const formData = new FormData();
+            formData.append("file", imageFile);
+
+            try {
+                // Call the /predict/image endpoint to predict the waste type and confidence score
+                const response = await fetch("/predict/image", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error("Prediction request failed.");
+                }
+
+                const predictionData = await response.json();
+                const wasteType = predictionData.waste_type;
+
+                // Get waste information using the /waste/<waste_type> endpoint
+                try {
+                    const response = await fetch(`/waste/${wasteType}`, {
+                        method: "GET"
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Failed to fetch waste type information.");
+                    }
+
+                    const wasteTypeInfo = await response.json();
+                    // Display the result
+                    displayPredictionResults(predictionData, wasteTypeInfo);
+                } catch (error) {
+                    console.error(error);
+                    alert("Failed to get waste type information. Please try again.");
+                }
+            } catch (error) {
+                console.error(error);
+                alert("Prediction failed. Please try again.");
+            }
+        });
+
+        // Function to display the results
+        function displayPredictionResults(predictionData, wasteTypeInfo) {
+            const predictionResults = document.getElementById("prediction-results");
+            predictionResults.innerHTML = `
+                <h2>Prediction Results:</h2>
+                <p>Waste Type: ${predictionData.waste_type}</p>
+                <p>Category: ${wasteTypeInfo.category}</p>
+                <p>Confidence Score: ${predictionData.confidence_score}</p>
+                <p>Description: ${wasteTypeInfo.description}</p>
+            `;
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.container:hover {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+}
+
+input, button {
+    margin-top: 10px;
+}
+
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    background-color: #ffe6e6;  /* light red */
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+}

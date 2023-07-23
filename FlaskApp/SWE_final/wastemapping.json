@@ -1,0 +1,15 @@
+{
+	"mappings" : {
+		"properties" : {
+			"waste_id" : {"type": "text" },
+			"username" : {"type": "text"},
+			"waste_type" : {"type": "text" },
+			"confidence_score" : {"type": "text" },
+			"image_filename" : { "type" : "text" },
+			"image_path" : { "type" : "text" },
+			"date": { "type" : "date" },
+			"image_binary" : { "type" : "binary" }
+			
+		}
+	}
+}
