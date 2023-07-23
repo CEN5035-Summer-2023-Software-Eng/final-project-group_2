@@ -4,10 +4,10 @@
 			"waste_id" : {"type": "text" },
 			"username" : {"type": "text"},
 			"waste_type" : {"type": "keyword" },
-			"confidence_score" : {"type": "float" },
+			"confidence_score" : {"type": "text" },
 			"image_filename" : { "type" : "text" },
 			"image_path" : { "type" : "text" },
-			"date": { "type" : "date" },
+			"date": { "type" : "text" },
 			"image_binary" : { "type" : "binary" }
 			
 		}
