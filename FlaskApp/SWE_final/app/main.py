@@ -13,15 +13,7 @@ from datetime import datetime
 
 
 config = {
-    "apiKey": "AIzaSyBYUFhhG9d9MpuyVOHi6__xvSLAEy0mryg",
-    "authDomain": "swefinal.firebaseapp.com",
-    "databaseURL": "https://swefinal-default-rtdb.firebaseio.com/",
-    "projectId": "swefinal",
-    "storageBucket": "swefinal.appspot.com",
-    "messagingSenderId": "84074162894",
-    "appId": "1:84074162894:web:c1f9e7065163a4cc877e9f",
-    "measurementId": "G-EZ17QG70GD",
-    "serviceAccount": "firebase_key.json"
+
 }
 
 firebase = pyrebase.initialize_app(config)
@@ -450,14 +442,16 @@ def get_num_unique():
 #MAIN SEC
 @app.route('/predict/classify/<username>+<token>', methods=['GET', 'POST'])
 def classify(username, token):
+#check login
     if(token == session['token'] and username == session['user']):
         print("Correct Token")
         return render_template('main/classify.html', username=username.split('@')[0], email = username, token = token)
     else:
-        return render_template('login.html')
+        return render_template('login.html')#return if incorrect login
     
 @app.route('/predict/locations/<username>+<token>', methods=['GET', 'POST'])
 def locations(username, token):
+#check login
     if(token == session['token'] and username == session['user']):
         print("Correct Token")
         return render_template('main/drop_off.html', username=username.split('@')[0], email = username, token = token)
@@ -465,6 +459,7 @@ def locations(username, token):
         return render_template('login.html')
     
 @app.route('/predict/history/<username>+<token>', methods=['GET', 'POST'])
+#check login
 def history(username, token):
     if(token == session['token'] and username == session['user']):
         print("Correct Token")
@@ -473,6 +468,7 @@ def history(username, token):
         return render_template('login.html')
     
 @app.route('/predict/portfolio/<username>+<token>', methods=['GET', 'POST'])
+#check login
 def portfolio(username, token):
     if(token == session['token'] and username == session['user']):
         print("Correct Token")
