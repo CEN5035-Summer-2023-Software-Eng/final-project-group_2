@@ -233,12 +233,12 @@
                   <h5 class="card-title">Portfolio</h5>
                   <p class="small fst-italic">You can visualize your portfolio below.</p>
                       
-                    <!-- Change Password Form -->
+                    <!-- Pie chart -->
   
                       <div class="text-center">
-                        <canvas id="pie-chart" width="400" height="400"></canvas>
+                        <h3>Pie Chart by Waste Type</h3>
+                        <canvas class="pie-chart" id="pie-chart" width="400" height="400"></canvas>
                       </div>
-
   
                   </div>
   
@@ -538,6 +538,13 @@
               options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                // Add font options to change the pie chart labels font
+                    plugins: { legend: { labels: {
+                        font: {
+                            family: "Poppins, sans-serif", // Set your desired font family
+                            color: "#444444",
+                        },
+                   }, }, },
               },
             });
           })
