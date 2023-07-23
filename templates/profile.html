@@ -142,7 +142,7 @@
                             <div class="row mb-3">
                                 <label for="sitetype" class="col-sm-2 col-form-label location-input-two">Site Type</label>
                                 <div class="col-sm-10">
-                                  <select id="sitetype" name="sitetype" lass="form-select" aria-label="Default select example">
+                                  <select id="sitetype" name="sitetype" class="form-select" aria-label="Default select example">
                                   </select>
                                 </div>
                             </div>
@@ -179,24 +179,40 @@
   
                   </div>
   
-                  <div class="tab-pane fade pt-3" id="history">
+                  <div class="tab-pane fade history pt-3" id="history">
+                  <h5 class="card-title">User History</h5>
+                  <p class="small fst-italic">You can view a list of your previously classified waste items by choosing a filter and providing text.</p>
+                    
   
                     <!-- History Tab Content -->
                     <div class="row mb-3">
                       <form id="history-search-form">
                           <!-- Drop-down to choose the field -->
-                          <label for="field">Choose a Field:</label>
-                          <select id="field" name="field">
-                          </select>
+                          <div class="row mb-3">
+                            <div class="col-sm-3">
+                              <select id="field" name="field" class="form-select">
+                                <option hidden disabled selected value="">Filter by</option>
+                              </select>
+                            </div>
+
                           <!-- Input field for the search query -->
-                          <label for="query">Enter Search Query:</label>
-                          <input type="text" id="query" name="query" required>
-                          <button type="submit">Search</button>
+                            <div class="col-sm-9">
+                              <div class="input-group">
+                                <input type="text" id="query" name="query" class="form-control" placeholder="Type any text and we will match it in the database.">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row mb-3">
+                            <div class="col-sm-6">
+                                <button type="submit" class="btn btn-search" id="search-button">Search</button>
+                            </div>
+                          </div>
                       </form>
 
-                      <div id="history-results">
+                      <div id="history-results" style="display: none;">
                           <h3>Search Results:</h3>
-                          <table id="history-result-table" class="table table-bordered">
+                          <table id="history-result-table" class="custom-table">
                               <thead>
                                   <tr>
                                       <!-- Table headers will be populated here -->
@@ -213,13 +229,16 @@
   
                   </div>
   
-                  <div class="tab-pane fade pt-3" id="portfolio">
-                    <!-- Change Password Form -->
+                  <div class="tab-pane fade portfolio pt-3" id="portfolio">
+                  <h5 class="card-title">Portfolio</h5>
+                  <p class="small fst-italic">You can visualize your portfolio below.</p>
+                      
+                    <!-- Pie chart -->
   
                       <div class="text-center">
-                        <canvas id="pie-chart" width="400" height="400"></canvas>
+                        <h3>Pie Chart by Waste Type</h3>
+                        <canvas class="pie-chart" id="pie-chart" width="400" height="400"></canvas>
                       </div>
-
   
                   </div>
   
@@ -426,6 +445,7 @@
             .done(function (fields) {
                 const fieldDropdown = $("#field");
                 fieldDropdown.empty();
+                fieldDropdown.append('<option hidden disabled selected value="">Filter by</option>')
                 fields.forEach(field => {
                     fieldDropdown.append(`<option value="${field}">${field}</option>`);
                 });
@@ -471,6 +491,8 @@
                       }).join("");
                       tableBody.append(`<tr>${rowHtml}</tr>`);
                   });
+
+                  $("#history-results").css("display", "block");
               })
               .fail(function (error) {
                   alert("Error occurred during search: " + error.responseJSON.error);
