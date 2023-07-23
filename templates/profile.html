@@ -228,19 +228,26 @@
                     <!-- End History Form -->
   
                   </div>
+
+                  <div class="tab-pane fade pt-3" id="portfolio">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Pie Chart -->
+                            <div class="col-md-6 text-center">
+                                <h5 class="card-title">Total Classified Waste Items</h5>
+                                <canvas id="pie-chart" width="400" height="300"></canvas>
+                            </div>
+                
+                            <!-- Stacked Bar Chart -->
+                            <div class="col-md-6 text-center">
+                                <h5 class="card-title">Classified Waste Items Distribution</h5>
+                                <canvas id="stacked-bar-chart" width="400" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
   
-                  <div class="tab-pane fade portfolio pt-3" id="portfolio">
-                  <h5 class="card-title">Portfolio</h5>
-                  <p class="small fst-italic">You can visualize your portfolio below.</p>
-                      
-                    <!-- Pie chart -->
-  
-                      <div class="text-center">
-                        <h3>Pie Chart by Waste Type</h3>
-                        <canvas class="pie-chart" id="pie-chart" width="400" height="400"></canvas>
-                      </div>
-  
-                  </div>
+                
   
                 </div><!-- End Bordered Tabs -->
   
@@ -290,6 +297,7 @@
   <script>
     
     /////// Classify Tab  ///////
+     /////// Classify Tab  ///////
     // Function to handle the form submission for predicting waste
     function predictImage() {
       event.preventDefault();
@@ -422,11 +430,10 @@
               });
       }
 
-      // Function to handle form submission and display results
-      function handleFormSubmission(event) {
+      // Function to handle drop-off form submission and display results
+      function dropoffFormSubmission(event) {
           event.preventDefault();
-          performDropoffSearch(event); // Call the search function you already have
-
+          performDropoffSearch(event); 
           // Show the results container after form submission
           $("#dropoff-results").show();
       }
@@ -434,7 +441,7 @@
       // Attach the handleFormSubmission function to the form submission event
       $(document).ready(function () {
           populateSiteTypes();
-          $("#dropoff-search-form").on("submit", handleFormSubmission);
+          $("#dropoff-search-form").on("submit", dropoffFormSubmission);
       });
 
       /////// History Tab  ///////
@@ -447,7 +454,7 @@
                 fieldDropdown.empty();
                 fieldDropdown.append('<option hidden disabled selected value="">Filter by</option>')
                 fields.forEach(field => {
-                    fieldDropdown.append(`<option value="${field}">${field}</option>`);
+                    fieldDropdown.append(`<option value="${field}">${field}</option>`);                 
                 });
             })
             .fail(function (error) {
@@ -493,6 +500,7 @@
                   });
 
                   $("#history-results").css("display", "block");
+
               })
               .fail(function (error) {
                   alert("Error occurred during search: " + error.responseJSON.error);
@@ -506,6 +514,18 @@
 
       /////// Portfolio Tab  ///////
       // Function to fetch data and create the pie chart
+      const chartColors = [
+                              '#FF6384', // Red
+                              '#36A2EB', // Blue
+                              '#FFCE56', // Yellow
+                              '#FF9F40', // Orange
+                              '#9966FF', // Purple
+                              '#4BC0C0', // Teal
+                              '#FFD700', // Gold
+                              '#32CD32', // Lime Green
+                              '#FF69B4', // Hot Pink
+                              '#FF4500', // Red-Orange
+                              ];
       function createPieChart() {
         // Display pie chart for waste_type, we can change this to another field name to display other fields
         const field_name = "waste_type"; 
@@ -519,34 +539,97 @@
             // Create the pie chart
             const ctx = document.getElementById("pie-chart").getContext("2d");
             const myPieChart = new Chart(ctx, {
-              type: "pie",
-              data: {
-                labels: labels,
-                datasets: [
-                  {
-                    data: counts,
-                    backgroundColor: [
-                      "#FF6384",
-                      "#36A2EB",
-                      "#FFCE56",
-                      // Add more colors if needed
+                type: "doughnut",
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            data: counts,
+                            backgroundColor: chartColors,
+                            borderWidth: 1,
+                        },
                     ],
-                    borderWidth: 1,
-                  },
-                ],
-              },
-              options: {
-                responsive: true,
-                maintainAspectRatio: false,
-              },
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: false, 
+                },
             });
-          })
+            })
           .catch((error) => {
             console.error("Error:", error);
           });
       }
       // Call the function when the document is ready
       document.addEventListener("DOMContentLoaded", createPieChart);
+
+      // Stacked bar chart
+      // Function to group the data and create stacked bar chart
+      function groupDataAndCreateStackedBarChart(data) {
+        const ctx = document.getElementById('stacked-bar-chart').getContext('2d');
+        const wasteTypes = [...new Set(data.map(item => item.waste_type))];
+        const groupedData = {};
+
+        // Group waste items by month and year and waste type
+        data.forEach(item => {
+            const date = new Date(item.date);
+            const monthYear = date.toLocaleString('default', { month: 'short', year: 'numeric' });
+            const wasteType = item.waste_type;
+            const key = `${monthYear}-${wasteType}`;
+
+            if (!groupedData[key]) {
+                groupedData[key] = {};
+            }
+            groupedData[key][wasteType] = (groupedData[key][wasteType] || 0) + 1;
+        });
+
+        // Get unique months and years for x-axis labels
+        const monthsYears = [...new Set(data.map(item => new Date(item.date).toLocaleString('default', { month: 'short', year: 'numeric' })))];
+        const datasets = [];
+
+        // Prepare the datasets for the stacked bar chart
+        wasteTypes.forEach(type => {
+            const dataPoints = monthsYears.map(monthYear => {
+                const key = `${monthYear}-${type}`;
+                return groupedData[key] ? groupedData[key][type] || 0 : 0;
+            });
+            datasets.push({
+                label: type,
+                data: dataPoints
+            });
+        });
+
+        // Create the chart
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: monthsYears,
+                backgroundColor: chartColors,
+                datasets: datasets,
+            },
+            options: {
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true },
+                },
+            },
+        });
+    }
+
+        async function createStackedBarChart() {
+            try {
+                const response = await fetch('/findClassifiedWasteByUsername');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data.');
+                }
+                const data = await response.json();
+                groupDataAndCreateStackedBarChart(data);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+      // Call createStackedBarChart function to create stacked bar chart
+      document.addEventListener('DOMContentLoaded', createStackedBarChart);
 
   </script>
 
