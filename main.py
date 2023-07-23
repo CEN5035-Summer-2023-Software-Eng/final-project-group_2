@@ -470,6 +470,41 @@ def get_num_unique():
         return jsonify({"error": str(e)}), 500
     
 
+# GET request to retrieve alll waste classified items for a given username (Portfolio Tab)
+@app.route("/findClassifiedWasteByUsername", methods=["GET"])
+def get_waste_classified():
+     # Check if the user is logged in (by checking the session)
+    if 'user' not in session:
+        return jsonify({"message": "User is not authenticated!"}), 401
+    # Get the inputs
+    username = session["user"]
+
+    try:
+        # Perform the Elasticsearch search
+        res = es.search(
+                index='wasteclassified',
+                source_excludes=["image_binary","image_path","username"],   # Exclude some fields
+                query={
+                    "bool": {
+                        "filter": [
+                            {"term": {"username": username.split("@")[0]}}
+                        ]}
+            }
+        )
+
+        # Extract the hits from the response
+        hits = res["hits"]["hits"]
+
+        # Check if there are any hits
+        if not hits:
+            return jsonify({"message": "No waste classified items found for the given username."}), 404
+
+        # Store results
+        classified_items = [hit["_source"] for hit in hits]
+        return jsonify(classified_items), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == '__main__':
