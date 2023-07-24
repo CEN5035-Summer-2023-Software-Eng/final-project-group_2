@@ -25,6 +25,25 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ url_for('static', filename='styles/nice_admin/css/profilestyle.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Style for the container that wraps the button */
+    .button-container {
+      display: flex;
+      justify-content: flex-end; /* Align items to the right */
+      padding: 20px; /* Add some padding to create space around the button */
+    }
+
+    /* Style for the button with class btn-refresh */
+    .btn-refresh {
+      background-color: #90EE90; /* Light green color */
+      color: #fff; /* Text color (white) */
+      border: none; /* Remove border */
+      padding: 10px 20px; /* Add some padding to make the button look nicer */
+      cursor: pointer; /* Show pointer cursor on hover */
+    }
+  </style>
+
 
   <!-- =======================================================
   * Template Name: Resi
@@ -226,6 +245,11 @@
                   <div class="tab-pane fade portfolio pt-3" id="portfolio">
                   <h5 class="card-title">Portfolio</h5>
                   <p class="small fst-italic">You can view a portfolio of previously classified waste items below.</p>
+                  <div class="button-container">
+                    <button type="button" class="btn btn-refresh" id="refresh-button" onclick="refreshAndScroll()"> 
+                      <i class="fas fa-sync"></i> <!-- Font Awesome refresh icon -->
+                    </button>
+                  </div>
                   
                     <div class="container">
                         <div class="row">
@@ -628,6 +652,30 @@
       // Call createStackedBarChart function to create stacked bar chart
       document.addEventListener('DOMContentLoaded', createStackedBarChart);
 
+  </script>
+    <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='styles/nice_admin/vendor/apexcharts/apexcharts.min.js') }}"></script>
+  <!-- ... Other Vendor JS Files ... -->
+
+  <!-- Add this script below the other scripts -->
+  <script>
+     function refreshAndScroll() {
+    // Refresh the page
+      location.reload();
+
+    // Scroll to the portfolio section
+    const portfolioSection = document.getElementById("portfolio");
+    if (portfolioSection) {
+      portfolioSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+    // Function to refresh the page
+    function refreshPage() {
+      location.reload();
+    }
+
+    // Event listener for the Refresh button
+    document.getElementById('refresh-button').addEventListener('click', refreshPage);
   </script>
 
 
