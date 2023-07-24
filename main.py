@@ -448,23 +448,33 @@ def get_num_unique():
                     "bool": {
                         "must": [
                             {"match": {"username": username.split("@")[0]}}
-                        ]}
+                    ]}
+            }, 
+            aggs={
+                    "unique_values": {
+                        "terms": {"field": f"{field_name}"}
+                    }
             }
         )
 
         # Check if result has been found
-        hits = res['hits']['hits']
-        if not hits:
+        unique_values = res["aggregations"]["unique_values"]
+        if not unique_values:
             return jsonify({"error": "Data not found!"}), 404
 
         # Store the results 
-        source_list = [hit["_source"] for hit in hits]
+        #source_list = [hit["_source"] for hit in hits]
         
         # Extract the chosen field and count unique values
-        count_dict = count_unique_values_by_field(source_list,str(field_name))
+        #count_dict = count_unique_values_by_field(source_list,str(field_name))
 
+        # Use dict to store result and format it
+        output_dict = {}
+        for item in unique_values["buckets"]:
+            output_dict[item["key"]] = item["doc_count"]
+            
         # Format the result as a dictionary
-        return jsonify(count_dict)
+        return jsonify(output_dict)
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -484,6 +494,7 @@ def get_waste_classified():
         res = es.search(
                 index='wasteclassified',
                 source_excludes=["image_binary","image_path","username"],   # Exclude some fields
+                size=1000,
                 query={
                     "bool": {
                         "filter": [
