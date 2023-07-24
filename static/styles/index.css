@@ -431,7 +431,7 @@ body {
   }
   
   .section-bg {
-    background-color: #faebff;
+    background: linear-gradient(to bottom, #faebff, #c5fad5);
   }
   
   .section-title {
@@ -467,7 +467,7 @@ body {
   # About
   --------------------------------------------------------------*/
   .about {
-    background: #faebff;
+    background: linear-gradient(to bottom, #c5fad5, #faebff);
   }
   
   .about .content h2 {
