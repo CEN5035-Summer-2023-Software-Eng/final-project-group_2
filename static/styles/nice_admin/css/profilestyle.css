@@ -193,7 +193,8 @@ body {
 # Card
 --------------------------------------------------------------*/
 .card {
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
     border: none;
     border-radius: 5px;
     box-shadow: 0px 0 30px rgb(228, 227, 227);
@@ -204,7 +205,7 @@ body {
     border-color: #faebff;
     background-color: #fff;
     color: #a579b3;
-    padding: 15px;
+    padding: 25px;
   }
   
   .card-title {
@@ -495,11 +496,12 @@ body {
 
   .portfolio .card-title {
     padding-top: 4px;
-    padding-left: 5px;
+    padding-left: 6px;
   }
 
   .portfolio p.small.fst-italic {
-    padding-left: 5px;
+    padding-left: 6px;
+    padding-bottom: 15px;
   }
   
   .portfolio h3 {

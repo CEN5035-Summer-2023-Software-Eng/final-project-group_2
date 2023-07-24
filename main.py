@@ -87,11 +87,11 @@ def register():
 
     
 # Direct to Profile page
-@app.route('/profile/<username>+<token>', methods=['GET', 'POST'])
+@app.route("/profile/<username>+<token>")
 def profile(username, token):
     if(token == session['token'] and username == session['user']):
         print("Correct Token")
-        return render_template('profile.html')
+        return render_template('profile.html', username=username.split('@')[0], email=username)
     else:
         return render_template('login.html')
     
