@@ -71,6 +71,15 @@ def login():
             return jsonify({'status': 'failure', 'message': 'Invalid credentials'}), 401
     return render_template('login.html')
 
+# Authentication API endpoinrs - LOGOUT
+@app.route('/logout', methods=['POST'])
+def logout():
+    if 'user' in session:
+        del session['user']
+    if 'token' in session:
+        del session['token']
+    return jsonify({'status': 'success', 'message': 'User logged out successfully'})
+    
 # Authentication API endpoinrs - REGISTER
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -472,7 +481,7 @@ def get_num_unique():
         output_dict = {}
         for item in unique_values["buckets"]:
             output_dict[item["key"]] = item["doc_count"]
-            
+
         # Format the result as a dictionary
         return jsonify(output_dict)
 

@@ -316,6 +316,28 @@
   <!-- Add the Chart.js library -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
+
+    // Signout Button
+    document.querySelector('.signout').addEventListener('click', () => {
+            fetch('/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    window.location.href = '/'; // Redirect to index.html after deleting the session variable
+                } else {
+                    console.log(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
     
     /////// Classify Tab  ///////
      /////// Classify Tab  ///////
