@@ -1,0 +1,533 @@
+/**
+* Template Name: Resi
+* Updated: May 30 2023 with Bootstrap v5.3.0
+* Template URL: https://bootstrapmade.com/resi-free-bootstrap-html-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    background: linear-gradient(to bottom, #faebff, #c5fad5);
+  }
+  
+  a {
+    text-decoration: none;
+    color: #D14AC2;
+  }
+  
+  a:hover {
+    color: #a8399b;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif;
+  }
+  
+  /*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+  .back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #a8399b;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+  }
+  
+  .back-to-top i {
+    font-size: 24px;
+    color: #fff;
+    line-height: 0;
+  }
+  
+  .back-to-top:hover {
+    background: #D14AC2;
+    color: #fff;
+  }
+  
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+  #header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 20px 0;
+    background: #fff;
+  }
+  
+  #header.header-scrolled,
+  #header.header-inner-pages {
+    padding: 12px 0;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  #header .logo {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #header .logo a {
+    color: #51c462;
+  }
+  
+  #header .logo img {
+    max-height: 40px;
+  }
+  
+  @media (max-width: 992px) {
+    #header {
+      padding: 12px 0;
+    }
+  }
+  
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  /**
+  * Desktop Navigation 
+  */
+  .navbar {
+    padding: 0;
+  }
+  
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .navbar li {
+    position: relative;
+  }
+  
+  .navbar a,
+  .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px 10px 15px;
+    font-size: 15px;
+    color: #0D5611;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+  
+  .navbar a i,
+  .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+  
+  .navbar a:hover,
+  .navbar .active,
+  .navbar .active:focus,
+  .navbar li:hover>a {
+    color: #4A051C;
+    background-color: lightgray;
+  }
+  
+  .navbar .signout,
+  .navbar .signout:focus {
+    padding: 6px 25px;
+    margin-left: 20px;
+    border-radius: 50px;
+  }
+  
+  .navbar .signout {
+    color: #fff;
+    background: #D14AC2;
+    border: none;
+  }
+  
+  .navbar .signout:hover {
+    color:#fff;
+    background: #a8399b; 
+  }
+
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+#main {
+    margin-top: 60px;
+    padding: 20px 30px;
+    transition: all 0.3s;
+  }
+  
+  @media (max-width: 1199px) {
+    #main {
+      padding: 20px;
+    }
+  }
+  
+/*--------------------------------------------------------------
+# Card
+--------------------------------------------------------------*/
+.card {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgb(228, 227, 227);
+  }
+  
+  .card-header,
+  .card-footer {
+    border-color: #faebff;
+    background-color: #fff;
+    color: #a579b3;
+    padding: 25px;
+  }
+  
+  .card-title {
+    padding: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #4A051C;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .card-title span {
+    color: #a579b3;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .card-body {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+/*--------------------------------------------------------------
+# Bordered Tabs
+--------------------------------------------------------------*/
+.nav-tabs-bordered {
+    border-bottom: 2px solid #ebeef4;
+  }
+  
+  .nav-tabs-bordered .nav-link {
+    margin-bottom: -2px;
+    border: none;
+    color: #472c4e;
+  }
+  
+  .nav-tabs-bordered .nav-link:hover,
+  .nav-tabs-bordered .nav-link:focus {
+    color: #3a9948;
+  }
+  
+  .nav-tabs-bordered .nav-link.active {
+    background-color: #fff;
+    color: #3a9948;
+    border-bottom: 2px solid #3a9948;
+  }
+
+/*--------------------------------------------------------------
+# Profie Page
+--------------------------------------------------------------*/
+.profile {
+  margin-top: 45px;
+} 
+.profile .profile-card img {
+  max-width: 120px;
+}
+
+.profile .profile-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #444444;
+  margin: 10px 0 0 0;
+}
+
+.profile .profile-card h3 {
+  font-size: 18px;
+}
+
+.profile .profile-card .social-links a {
+  font-size: 20px;
+  display: inline-block;
+  color: rgba(93, 1, 112, 0.5);
+  line-height: 0;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.profile .profile-card .social-links a:hover {
+  color: #a8399b;
+}
+
+.profile .row {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/*--------------------------------------------------------------
+# Classify Page
+--------------------------------------------------------------*/
+
+.profile .file-upload,
+.form-control {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.classify .file-upload {
+  font-weight: 600;
+  color: #4A051C;
+}
+
+.profile .btn-predict {
+  color: #fff;
+  background: #51c462;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50px;
+  padding: 6px 25px;
+  margin-left: 325px;
+}
+
+.profile .btn-predict:hover {
+  color:#fff;
+  background: #3a9948; 
+}
+
+#displayed-image {
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#prediction-results {
+  font-size: 16px;
+  color: #444444;
+  margin-bottom: 20px;
+}
+
+#prediction-results h2 {
+  font-size: 16px;
+  color:#4A051C;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#prediction-results p {
+  margin-bottom: 10px;
+}
+
+/*--------------------------------------------------------------
+# Locations Page
+--------------------------------------------------------------*/
+.locations label {
+  font-weight: 600;
+  color: #4A051C;
+}
+
+.locations .card-title {
+  padding: 4px 0 15px 0;
+}
+
+.locations img {
+  max-width: 120px;
+}
+
+.locations .location-input-one, 
+.form-control {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.locations .location-input-two, 
+.form-select {
+  margin-bottom: 20px;
+}
+
+.profile .btn-find {
+  color: #fff;
+  background: #51c462;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50px;
+  padding: 6px 25px;
+  margin-left: 325px;
+}
+
+.profile .btn-find:hover {
+  color:#fff;
+  background: #3a9948; 
+}
+
+.locations .form-select {
+  width: auto;
+}
+
+.locations h3 {
+  font-weight: 400;
+  font-size: 22px;
+  color: #4A051C;
+  margin-top: 35px;
+  margin-bottom: -10px;
+  font-family: "Poppins", sans-serif;
+}
+
+#dropoff-results {
+  display: none;
+}
+
+.custom-table {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f9eafd;
+}
+
+.custom-table tbody tr:nth-child(odd) {
+  background-color: #fdf5ff;
+}
+
+.custom-table thead tr {
+  background-color: #e29dda;
+}
+
+.custom-table th,
+.custom-table td {
+  text-align: center;
+}
+
+.custom-table {
+  border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #979e98;
+  padding: 8px;
+}
+
+/*--------------------------------------------------------------
+# History Page
+--------------------------------------------------------------*/
+
+.history .card-title {
+  padding: 4px 8px 15px 0;
+}
+
+.history.form-select {
+  padding-left: 8px;
+  width: auto;
+}
+
+.profile .btn-search {
+  color: #fff;
+  background: #51c462;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50px;
+  padding: 6px 25px;
+  margin-left: 325px;
+}
+
+.profile .btn-search:hover {
+  color:#fff;
+  background: #3a9948; 
+}
+
+.history h3 {
+  font-weight: 400;
+  font-size: 22px;
+  color: #4A051C;
+  margin-top: 35px;
+  margin-bottom: -10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.history .form-select, 
+.form-control {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.history .form-control {
+  padding-left: 10px;
+  padding-right: 8px;
+}
+
+  /*--------------------------------------------------------------
+  # Portfolio page
+  --------------------------------------------------------------*/
+
+  .portfolio .card-title {
+    padding-top: 4px;
+    padding-left: 6px;
+  }
+
+  .portfolio p.small.fst-italic {
+    padding-left: 6px;
+    padding-bottom: 15px;
+  }
+  
+  .portfolio h3 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 22px;
+    color: #4A051C;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  /*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+  #footer {
+    background: #e3faea;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  #footer .credits {
+    padding-top: 5px;
+    font-size: 13px;
+    color: #0D5611;
+  }
+  
+  #footer .credits a {
+    transition: 0.3s;
+  }

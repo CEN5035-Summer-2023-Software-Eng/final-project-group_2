@@ -1,0 +1,17 @@
+{
+	"mappings" : {
+		"properties" : {
+            "SiteName": {"type": "keyword"},
+            "SiteType": {"type": "keyword"},
+            "Borough": {"type": "keyword"},
+            "SiteAddress": {"type": "keyword"},
+            "Zipcode": {"type": "text"},
+            "PhoneNumber": {"type": "text"},
+            "DayHours": {"type": "text"},
+            "Note": {"type": "text"},
+            "Latitude": {"type": "float"},
+            "Longitude": {"type": "float"},
+            "Location": {"type": "geo_point"}
+		}
+	}
+}

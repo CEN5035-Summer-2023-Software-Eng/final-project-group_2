@@ -1,0 +1,9 @@
+model/__pycache__/
+model/__pycache__/
+.env
+
+.DS_Store
+static/.DS_Store
+templates/.DS_Store
+
+firebase_key.json

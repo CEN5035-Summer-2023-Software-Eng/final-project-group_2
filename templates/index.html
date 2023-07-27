@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CleanAI - Homepage</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+
+  <link rel="icon" href= "{{ url_for('static',filename='styles/resi/img/favicon.png') }}"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href= "{{ url_for('static',filename='styles/resi/vendor/bootstrap/css/bootstrap.min.css') }}"/>
+  <link rel="stylesheet" href= "{{ url_for('static',filename='styles/resi/vendor/bootstrap-icons/bootstrap-icons.css') }}"/>
+  <link rel="stylesheet" href= "{{ url_for('static',filename='styles/resi/vendor/boxicons/css/boxicons.min.css') }}"/>
+  <link rel="stylesheet" href= "{{ url_for('static',filename='styles/resi/vendor/glightbox/css/glightbox.min.css') }}"/>
+  <link rel="stylesheet" href= "{{ url_for('static',filename='styles/resi/vendor/remixicon/remixicon.css') }}"/>
+  <link rel="stylesheet" href= "{{ url_for('static',filename='styles/resi/vendor/swiper/swiper-bundle.min.css') }}"/>
+
+  <!-- Template Main CSS File -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}"/>
+
+  <!-- =======================================================
+  * Template Name: Resi
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/resi-free-bootstrap-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">CleanAI</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="register" href="/register">Register</a></li>
+          <li><a class="login" href="/login">Login</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-2 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1>Easy Tool For Recycling Your Waste</h1>
+          <ul>
+            <li><i class="ri-check-line"></i> Classify your waste by simply uploading an image</li>
+            <li><i class="ri-check-line"></i> Get drop-off locations based on ZIP code and site type</li>
+            <li><i class="ri-check-line"></i> View a detailed history of your waste collection</li>
+          </ul>
+          <div class="mt-3">
+            <a href="#about" class="btn-learn-more scrollto">Learn More</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+          <img src="static/styles/resi/img/hero-img.png" class="img-fluid" alt="">
+          <p><i><a href="https://www.freepik.com/free-vector/garbage-separation-set-bin-with-trash-separate-infographic-educational-classification-collection-with-dustbin-containers-sorting-recycle-garbage-isolated-white_28946146.htm#page=2&query=recycle%20bin&position=44&from_view=search&track=ais">Original image by studio4rt</a> on Freepik</i></p>
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <h2 class="underline">About Us</h2>
+            <h3>We are Group 2 and for our final project, we decided to make a Waste Classification API.</h3>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              The waste classification API will utilize machine learning models to classify different types of waste (recyclable, biodegradable, nonbiodegradable, etc.) using images.
+              It aims to automate the waste sorting process and help waste management systems segregate and dispose of different kinds of garbage properly. 
+              Our API can also provide a list of drop-off locations near the user for recycling. To get started, you only need to make an account. 
+              Registered users have access to the following functions:
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Classify</li>
+              <li><i class="ri-check-double-line"></i> Drop-off Locations</li>
+              <li><i class="ri-check-double-line"></i> History</li>
+              <li><i class="ri-check-double-line"></i> Portfolio</li>
+            </ul>
+            <p class="fst-italic">
+              This API was last updated on 07/13/2023.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Our API provides various services that makes waste management accessible for the everyday user.</p>
+        </div>
+
+        <div class="row">
+          <div class="content col-xl-5 d-flex flex-column justify-content-center">
+            <img src="static/styles/resi/img/services.jpg" class="img-fluid" alt="">
+            <p><i><a href="https://www.freepik.com/free-vector/green-leaf-recycle-sign_37408952.htm#query=recycle&position=5&from_view=search&track=sph">Image by juicy_fish</a> on Freepik</i></p>
+          </div>
+          <div class="col-xl-7">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-lg-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon-box iconbox-blue">
+                    <h4><a href="">Waste Classification</a></h4>
+                    <p>Simply upload images of waste, and our machine learning algorithms will accurately classify them into categories such as recyclable, biodegradable, non-biodegradable, and hazardous</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="icon-box iconbox-orange ">
+                    <h4><a href="">Drop-off Locations</a></h4>
+                    <p>Find nearby drop-off locations for recycling different types of waste, helping you responsibly dispose of your recyclable materials.</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="icon-box iconbox-purple">
+                    <h4><a href="">Learn about Waste</a></h4>
+                    <p>Access detailed information about various waste items, including descriptions, recycling instructions, and proper disposal methods.</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon-box iconbox-teal">
+                    <h4><a href="">User Profiles</a></h4>
+                    <p>Create an account to track your waste classification history, contribute to waste management initiatives, and stay informed about environmental news.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>Final Project Group 2 is made up of the three following members.</p>
+        </div>
+
+        <div class="row">
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+                <div class="member-info">
+                    <h4>Nha Tran</h4>
+                    <span>ntran2020@fau.edu</span>
+                    <div class="social">
+                        <a href="https://github.com/nhatrangtrannt" target="_blank"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/nha-tran-0b28591a4/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+                <div class="member-info">
+                    <h4>Chelsea Zuvieta</h4>
+                    <span>czuvieta2016@fau.edu</span>
+                    <div class="social">
+                        <a href="https://github.com/czuv" target="_blank"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/chelsea-zuvieta/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+                <div class="member-info">
+                    <h4>Juan Merlos</h4>
+                    <span>jmerlosjr2017@fau.edu</span>
+                    <div class="social">
+                        <a href="https://github.com/juambi01" target="_blank"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/juan-merlos-765b96243/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <ul class="faq-list">
+
+          <li>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">What are the categories available for waste classification? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                We classify many different types of waste. These waste types include: electronics, glass, medical, metal, organic waste, paper, cardboard, plastic, textiles, and wood.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Within what city are the drop-off locations? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                All drop-off locations used in our API were pulled from a dataset based on New York City zones.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">How can I see all the previously classified waste images? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                After logging in, you can view the details of your previously classified images under the "History" page. 
+                This can be filtered with a text input and by ID, waste type, category, or date. 
+                If you could like to see a visualization of your classification history, you can find this under the "Portfolio" page.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Can I access the waste classification and management tools without an account? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                No, you must make an account to access all the functions of the API.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Is there a cost for using the tools? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Nope! All you need is an account and you can use any tool on the API.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">What type of model was built for the waste classification? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                The waste classification model is a tensorflow object detection neural network trained to recognize specific categories of waste. 
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p class = "contact-p">We are best reached over email, because the address is incomplete and the phone number does not exist.</p>
+        </div>
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box mt-4">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>ntran2020@fau.edu <b>·</b> jmerlosjr2017@fau.edu <b>·</b> czuvieta2016@fau.edu</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-map"></i>
+                  <h3>Our Address</h3>
+                  <p>Boca Raton, FL</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Call Us</h3>
+                  <p>+1 123-NOT-REAL</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/resi-free-bootstrap-html-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/styles/resi/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/styles/resi/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/styles/resi/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/styles/resi/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/styles/resi/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/styles/resi/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/styles/resi/js/main.js"></script>
+
+</body>
+
+</html>

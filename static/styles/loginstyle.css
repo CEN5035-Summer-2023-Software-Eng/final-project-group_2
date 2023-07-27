@@ -1,0 +1,75 @@
+body {
+    font-family: "Poppins", sans-serif;
+    color: #444444;
+    background: linear-gradient(to bottom, #faebff, #c5fad5);
+    padding: 20px;
+}
+
+html, body {
+    height: 100%;
+  }
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    font-family: "Poppins", sans-serif;
+}
+
+.container:hover {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
+input, button {
+    margin-top: 10px;
+}
+
+button {
+    transition: 0.3s;
+}
+
+button.btn-first, 
+button.btn-second {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding: 8px 50px 8px 50px;
+    margin-bottom: 13px;
+    transition: 0.5s;
+    border-radius: 50px;
+    color: #fff;
+}
+
+button.btn-first {
+    background: #51c462;
+    margin-top: 10px;
+}
+
+button.btn-second {
+    background: #D14AC2;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    background-color: #ffe6e6;  /* light red */
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+}
