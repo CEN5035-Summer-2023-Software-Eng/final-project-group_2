@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="icon" href= "{{ url_for('static',filename='styles/resi/img/favicon.png') }}"/>
     <title>Register</title>
+
+    <!-- Tab icon -->
+    <link rel="icon" href= "{{ url_for('static',filename='styles/resi/img/favicon.png') }}"/>
+    
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- CSS File for Login and Register Pages -->
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/loginstyle.css') }}"/>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 </head>
 <body>
 
     <h2 class="text-center mt-5">Register</h2>
 
+    <!-- Error Message -->
     {% if error %}
         <p class="error">{{ error }}</p>
     {% endif %}
 
     <form method="POST">
         <div class="container mt-5">
+            <!-- Email Input -->
             <div class="form-group">
                 <label for="email"><b>Email</b></label>
                 <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
             </div>
 
+            <!-- Password Input -->
             <div class="form-group">
                 <label for="psw"><b>Password</b></label>
                 <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
             </div>
 
+            <!-- Submit Login Information -->
             <button type="submit" class="btn btn-first btn-block">Register</button>
+            <!-- Redirect User to Index Page -->
             <button type="button" class="btn btn-second btn-block mt-2" onclick="window.location.href='/'">Back to Home</button>
         </div>
     </form>

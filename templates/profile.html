@@ -9,8 +9,9 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
+  <!-- Tab Icon -->
   <link href="{{ url_for('static', filename='styles/resi/img/favicon.png') }}" rel="icon">
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -23,9 +24,12 @@
   <link href="{{ url_for('static', filename='styles/nice_admin/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='styles/nice_admin/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- CSS File for User Profile-->
   <link href="{{ url_for('static', filename='styles/nice_admin/css/profilestyle.css') }}" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Button to Refresh for Portfolio page -->
   <style>
     /* Style for the container that wraps the button */
     .button-container {
@@ -44,7 +48,6 @@
     }
   </style>
 
-
   <!-- =======================================================
   * Template Name: Resi
   * Updated: May 30 2023 with Bootstrap v5.3.0
@@ -60,15 +63,15 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
+      <!-- Redirects the User to Index page -->
       <h1 class="logo"><a href="#" onclick="window.location.href='/'">CleanAI</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
+      <!-- Navigation Bar for Sign out Button -->
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="signout" href="#" onclick="window.location.href='/'">Sign out</a></li>
         </ul>
-      </nav><!-- .navbar -->
+      </nav><!-- End of Navigation Bar -->
 
     </div>
   </header><!-- End Header -->
@@ -79,6 +82,7 @@
         <div class="row">
           <div class="col-xl-4">
   
+            <!-- Card always on left side of page consisting of a recycle symbol image, username, and email -->
             <div class="card">
               <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
   
@@ -94,7 +98,7 @@
   
             <div class="card">
               <div class="card-body pt-3">
-                <!-- Bordered Tabs -->
+                <!-- Bordered Tabs for Each Tool -->
                 <ul class="nav nav-tabs nav-tabs-bordered">
   
                   <li class="nav-item">
@@ -116,11 +120,13 @@
                 </ul>
                 <div class="tab-content pt-2">
   
+                  <!-- Classify Tab: First Tool -->
                   <div class="tab-pane fade show active classify" id="classify">
                     <h5 class="card-title">Upload Waste Here</h5>
                     <p class="small fst-italic">Upload a picture of waste, and we will provide the classification details.</p>
                     
                     <form id="upload-form" enctype="multipart/form-data">
+                        <!-- User can upload waste image -->
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-2 col-form-label file-upload">File Upload</label>
                             <div class="col-sm-10">
@@ -128,23 +134,26 @@
                             </div>
                         </div>
                        
+                        <!-- Predict button to run classification model using uploaded image -->
                         <div class="row mb-3">
                             <div class="col-sm-10">
                                 <button type="button" class="btn btn-predict" id="predict-button">Predict</button>
                             </div>
                         </div>
                     </form> 
+                    <!-- Waste Type, Category, Confidence Score, Description -->
                     <div id="prediction-results"></div>
+                    <!-- Displays the uploaded Image -->
                     <img id="displayed-image" src="">
                   </div>
   
+                  <!-- Drop-off Locations Tab: Second Tool -->
                   <div class="tab-pane fade locations pt-3" id="locations">
-
                     <h5 class="card-title">Find Drop-off Locations</h5>
                     <p class="small fst-italic">Enter your nearest ZIP Code, and we will find your closest drop-off locations</p>
   
-                      <!--<div class="row mb-3">-->
                         <form id="dropoff-search-form">
+                            <!-- ZIP Code Input -->
                             <div class="row mb-3">
                                 <label for="zipcode" class="col-sm-2 col-form-label location-input-one">ZIP Code</label>
                                 <div class="col-sm-10">
@@ -152,6 +161,7 @@
                                 </div>
                             </div>
 
+                            <!-- Drop-down Menu to Select Site Type -->
                             <div class="row mb-3">
                                 <label for="sitetype" class="col-sm-2 col-form-label location-input-two">Site Type</label>
                                 <div class="col-sm-10">
@@ -160,6 +170,7 @@
                                 </div>
                             </div>
 
+                            <!-- Find Locations Button -->
                             <div class="row mb-3">
                                 <div class="col-sm-10">
                                     <button type="submit" class="btn btn-find" id="find-button">Find Locations</button>
@@ -186,21 +197,19 @@
                                 <tbody><!-- Table rows will be added here --></tbody>
                             </table>
                         </div>
-                    <!--  </div>-->
   
                       
   
                   </div>
   
+                  <!-- User History Tab: Third Tool -->
                   <div class="tab-pane fade history pt-3" id="history">
-                  <h5 class="card-title">User History</h5>
-                  <p class="small fst-italic">You can view a list of your previously classified waste items by choosing a filter and providing text.</p>
+                    <h5 class="card-title">User History</h5>
+                    <p class="small fst-italic">You can view a list of your previously classified waste items by choosing a filter and providing text.</p>
                     
-  
-                    <!-- History Tab Content -->
-                    <div class="row mb-3">
-                      <form id="history-search-form">
-                          <!-- Drop-down to choose the field -->
+                      <div class="row mb-3">
+                        <form id="history-search-form">
+                          <!-- Drop-Down Menu to Choose the Filter Field -->
                           <div class="row mb-3">
                             <div class="col-sm-3">
                               <select id="field" name="field" class="form-select">
@@ -208,7 +217,7 @@
                               </select>
                             </div>
 
-                          <!-- Input field for the search query -->
+                          <!-- Input Field for the Search Query -->
                             <div class="col-sm-9">
                               <div class="input-group">
                                 <input type="text" id="query" name="query" class="form-control" placeholder="Type any text and we will match it in the database.">
@@ -216,14 +225,16 @@
                             </div>
                           </div>
 
+                          <!-- Search User History Button -->
                           <div class="row mb-3">
                             <div class="col-sm-6">
                                 <button type="submit" class="btn btn-search" id="search-button">Search</button>
                             </div>
                           </div>
-                      </form>
+                        </form>
 
-                      <div id="history-results" style="display: none;">
+                        <!-- Table Displaying User History Search Results -->
+                        <div id="history-results" style="display: none;">
                           <h3>Search Results:</h3>
                           <table id="history-result-table" class="custom-table">
                               <thead>
@@ -235,31 +246,34 @@
                                   <!-- Table rows will be added here -->
                               </tbody>
                           </table>
-                      </div>
+                        </div>
                   </div>
                     
                     <!-- End History Form -->
   
                   </div>
 
+                  <!-- Portfolio Tab: Fourth Tool -->
                   <div class="tab-pane fade portfolio pt-3" id="portfolio">
-                  <h5 class="card-title">Portfolio</h5>
-                  <p class="small fst-italic">You can view a portfolio of previously classified waste items below.</p>
-                  <div class="button-container">
-                    <button type="button" class="btn btn-refresh" id="refresh-button" onclick="refreshAndScroll()"> 
-                      <i class="fas fa-sync"></i> <!-- Font Awesome refresh icon -->
-                    </button>
-                  </div>
+                    <h5 class="card-title">Portfolio</h5>
+                    <p class="small fst-italic">You can view a portfolio of previously classified waste items below.</p>
+                     
+                      <!-- Refresh Page Button -->
+                      <div class="button-container">
+                        <button type="button" class="btn btn-refresh" id="refresh-button" onclick="refreshAndScroll()"> 
+                          <i class="fas fa-sync"></i> <!-- Font Awesome refresh icon -->
+                        </button>
+                      </div>
                   
                     <div class="container">
                         <div class="row">
-                            <!-- Pie Chart -->
+                            <!-- Pie Chart for Total Classified Waste Items-->
                             <div class="col-md-6 text-center">
                                 <h5 class="card-title">Total Classified Waste Items</h5>
                                 <canvas id="pie-chart" width="400" height="300"></canvas>
                             </div>
                 
-                            <!-- Stacked Bar Chart -->
+                            <!-- Stacked Bar Chart for Monthly Distribution of Classified Waste Items -->
                             <div class="col-md-6 text-center">
                                 <h5 class="card-title">Classified Waste Items Distribution by Month</h5>
                                 <canvas id="stacked-bar-chart" width="400" height="300"></canvas>
@@ -287,19 +301,18 @@
 
       <div class="me-md-auto text-center text-md-start">
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- All the links in the footer should remain intact per template rules. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/resi-free-bootstrap-html-template/ -->
           Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
     </div>
   </footer><!-- End Footer -->
 
+  <!-- Button to bring user back to the top of the Index page -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
+  <!-- Vendor JS Files Given by Template -->
   <script src="{{ url_for('static', filename='styles/nice_admin/vendor/apexcharts/apexcharts.min.js') }}"></script>
   <script src="{{ url_for('static', filename='styles/nice_admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ url_for('static', filename='styles/nice_admin/vendor/chart.js/chart.umd.js') }}"></script>
@@ -309,7 +322,7 @@
   <script src="{{ url_for('static', filename='styles/nice_admin/vendor/tinymce/tinymce.min.js') }}"></script>
 
 
-  <!-- Template Main JS File -->
+  <!-- Main JS File Given by Template -->
   <script src="{{ url_for('static', filename='styles/nice_admin/js/main.js') }}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   

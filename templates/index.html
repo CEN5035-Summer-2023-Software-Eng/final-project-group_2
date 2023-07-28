@@ -9,8 +9,7 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-
+  <!-- Tab icon -->
   <link rel="icon" href= "{{ url_for('static',filename='styles/resi/img/favicon.png') }}"/>
 
   <!-- Google Fonts -->
@@ -24,7 +23,7 @@
   <link rel="stylesheet" href= "{{ url_for('static',filename='styles/resi/vendor/remixicon/remixicon.css') }}"/>
   <link rel="stylesheet" href= "{{ url_for('static',filename='styles/resi/vendor/swiper/swiper-bundle.min.css') }}"/>
 
-  <!-- Template Main CSS File -->
+  <!-- CSS File for Index-->
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}"/>
 
   <!-- =======================================================
@@ -43,9 +42,8 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <h1 class="logo"><a href="index.html">CleanAI</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
+      <!-- Navigation Bar for all sections of Index-->
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
@@ -57,13 +55,12 @@
           <li><a class="register" href="/register">Register</a></li>
           <li><a class="login" href="/login">Login</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav><!-- End of Navigation Bar -->
 
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
+  <!-- ======= Hero: First Section of Index  ======= -->
   <section id="hero" class="d-flex align-items-center">
 
     <div class="container">
@@ -79,18 +76,20 @@
             <a href="#about" class="btn-learn-more scrollto">Learn More</a>
           </div>
         </div>
+        <!-- First image of Index -->
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
           <img src="static/styles/resi/img/hero-img.png" class="img-fluid" alt="">
+          <!-- Where the original image came from -->
           <p><i><a href="https://www.freepik.com/free-vector/garbage-separation-set-bin-with-trash-separate-infographic-educational-classification-collection-with-dustbin-containers-sorting-recycle-garbage-isolated-white_28946146.htm#page=2&query=recycle%20bin&position=44&from_view=search&track=ais">Original image by studio4rt</a> on Freepik</i></p>
         </div>
       </div>
     </div>
 
-  </section><!-- End Hero -->
+  </section><!-- End Hero Section -->
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
+    <!-- ======= About: Second Section of Index ======= -->
     <section id="about" class="about">
       <div class="container">
 
@@ -101,7 +100,7 @@
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-              The waste classification API will utilize machine learning models to classify different types of waste (recyclable, biodegradable, nonbiodegradable, etc.) using images.
+              The waste classification API utilizes a machine learning model to classify different types of waste (recyclable, biodegradable, nonbiodegradable, etc.) using images.
               It aims to automate the waste sorting process and help waste management systems segregate and dispose of different kinds of garbage properly. 
               Our API can also provide a list of drop-off locations near the user for recycling. To get started, you only need to make an account. 
               Registered users have access to the following functions:
@@ -113,7 +112,7 @@
               <li><i class="ri-check-double-line"></i> Portfolio</li>
             </ul>
             <p class="fst-italic">
-              This API was last updated on 07/13/2023.
+              This API was last updated on 07/28/2023.
             </p>
           </div>
         </div>
@@ -121,7 +120,7 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Services Section ======= -->
+    <!-- ======= Services: Third Section of Index ======= -->
     <section id="services" class="services">
       <div class="container">
 
@@ -173,7 +172,7 @@
       </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= Team Section ======= -->
+    <!-- ======= Team: Fourth Section of Index ======= -->
     <section id="team" class="team section-bg">
       <div class="container">
 
@@ -184,6 +183,7 @@
 
         <div class="row">
 
+        <!-- Email, GitHub, and Linkedin information for Nha Tran -->
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
                 <div class="member-info">
@@ -197,6 +197,7 @@
             </div>
         </div>
 
+        <!-- Email, GitHub, and Linkedin information for Chelsea Zuvieta -->
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
                 <div class="member-info">
@@ -210,6 +211,7 @@
             </div>
         </div>
 
+        <!-- Email, GitHub, and Linkedin information for Juan Merlos -->
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
                 <div class="member-info">
@@ -228,7 +230,7 @@
       </div>
     </section><!-- End Team Section -->
 
-    <!-- ======= Frequently Asked Questions Section ======= -->
+    <!-- ======= Frequently Asked Questions (FAQ): Fifth Section of Index ======= -->
     <section id="faq" class="faq">
       <div class="container">
 
@@ -299,7 +301,7 @@
       </div>
     </section><!-- End Frequently Asked Questions Section -->
 
-    <!-- ======= Contact Section ======= -->
+    <!-- ======= Contact: Sixth Section of Index ======= -->
     <section id="contact" class="contact section-bg">
       <div class="container">
 
@@ -351,19 +353,18 @@
 
       <div class="me-md-auto text-center text-md-start">
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- All the links in the footer should remain intact per template rules. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/resi-free-bootstrap-html-template/ -->
           Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
     </div>
   </footer><!-- End Footer -->
 
+  <!-- Button to bring user back to the top of the Index page -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
+  <!-- Vendor JS Files Given by Template -->
   <script src="static/styles/resi/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="static/styles/resi/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="static/styles/resi/vendor/glightbox/js/glightbox.min.js"></script>
@@ -371,7 +372,7 @@
   <script src="static/styles/resi/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="static/styles/resi/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
+  <!-- Main JS File Given by Template -->
   <script src="static/styles/resi/js/main.js"></script>
 
 </body>

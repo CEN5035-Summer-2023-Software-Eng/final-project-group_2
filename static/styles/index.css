@@ -186,115 +186,6 @@ body {
     background: #3a9948;
   }
   
-  /**
-  * Mobile Navigation 
-  */
-  .mobile-nav-toggle {
-    color: #434175;
-    font-size: 28px;
-    cursor: pointer;
-    display: none;
-    line-height: 0;
-    transition: 0.5s;
-  }
-  
-  .mobile-nav-toggle.bi-x {
-    color: #fff;
-  }
-  
-  @media (max-width: 991px) {
-    .mobile-nav-toggle {
-      display: block;
-    }
-  
-    .navbar ul {
-      display: none;
-    }
-  }
-  
-  .navbar-mobile {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(48, 47, 84, 0.9);
-    transition: 0.3s;
-  }
-  
-  .navbar-mobile .mobile-nav-toggle {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
-  
-  .navbar-mobile ul {
-    display: block;
-    position: absolute;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
-    padding: 10px 0;
-    border-radius: 10px;
-    background-color: #fff;
-    overflow-y: auto;
-    transition: 0.3s;
-  }
-  
-  .navbar-mobile a,
-  .navbar-mobile a:focus {
-    padding: 10px 20px;
-    font-size: 15px;
-    color: #434175;
-  }
-  
-  .navbar-mobile a:hover,
-  .navbar-mobile .active,
-  .navbar-mobile li:hover>a {
-    color: #5a5af3;
-  }
-  
-  .navbar-mobile .getstarted,
-  .navbar-mobile .getstarted:focus {
-    margin: 15px;
-  }
-  
-  .navbar-mobile .dropdown ul {
-    position: static;
-    display: none;
-    margin: 10px 20px;
-    padding: 10px 0;
-    z-index: 99;
-    opacity: 1;
-    visibility: visible;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  }
-  
-  .navbar-mobile .dropdown ul li {
-    min-width: 200px;
-  }
-  
-  .navbar-mobile .dropdown ul a {
-    padding: 10px 20px;
-  }
-  
-  .navbar-mobile .dropdown ul a i {
-    font-size: 12px;
-  }
-  
-  .navbar-mobile .dropdown ul a:hover,
-  .navbar-mobile .dropdown ul .active:hover,
-  .navbar-mobile .dropdown ul li:hover>a {
-    color: #5a5af3;
-  }
-  
-  .navbar-mobile .dropdown>.dropdown-active {
-    display: block;
-  }
-  
   /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
@@ -424,7 +315,7 @@ body {
   }
   
   /*--------------------------------------------------------------
-  # Sections General
+  # General Style Settings for each Section
   --------------------------------------------------------------*/
   section {
     padding: 60px 0;
@@ -464,7 +355,7 @@ body {
   }
   
   /*--------------------------------------------------------------
-  # About
+  # About Section
   --------------------------------------------------------------*/
   .about {
     background: linear-gradient(to bottom, #c5fad5, #faebff);
@@ -521,7 +412,7 @@ body {
   }
   
   /*--------------------------------------------------------------
-  # Services
+  # Services Section
   --------------------------------------------------------------*/
   .services h2::after {
     content: "";
@@ -610,7 +501,7 @@ body {
   }
   
   /*--------------------------------------------------------------
-  # Team
+  # Team Section
   --------------------------------------------------------------*/
   .team h2::after {
     content: "";
@@ -680,7 +571,7 @@ body {
   }
   
   /*--------------------------------------------------------------
-  # Frequently Asked Questions
+  # Frequently Asked Questions (FAQ) Section
   --------------------------------------------------------------*/
   .faq {
     padding: 60px 0;
@@ -756,7 +647,7 @@ body {
   }
   
   /*--------------------------------------------------------------
-  # Contact
+  # Contact Section
   --------------------------------------------------------------*/
   .contact h2::after {
     content: "";
@@ -800,59 +691,6 @@ body {
     line-height: 24px;
     font-size: 17px;
     margin-bottom: 10px;
-  }
-  
-  /*--------------------------------------------------------------
-  # Breadcrumbs
-  --------------------------------------------------------------*/
-  .breadcrumbs {
-    padding: 15px 0;
-    background: #f1f1f7;
-    min-height: 40px;
-    margin-top: 68px;
-  }
-  
-  .breadcrumbs h2 {
-    font-size: 28px;
-    font-weight: 400;
-    color: #434175;
-  }
-  
-  .breadcrumbs ol {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .breadcrumbs ol li+li {
-    padding-left: 10px;
-  }
-  
-  .breadcrumbs ol li+li::before {
-    display: inline-block;
-    padding-right: 10px;
-    color: #565396;
-    content: "/";
-  }
-  
-  @media (max-width: 992px) {
-    .breadcrumbs {
-      margin-top: 60px;
-    }
-  
-    .breadcrumbs .d-flex {
-      display: block !important;
-    }
-  
-    .breadcrumbs ol {
-      display: block;
-    }
-  
-    .breadcrumbs ol li {
-      display: inline-block;
-    }
   }
   
   /*--------------------------------------------------------------
