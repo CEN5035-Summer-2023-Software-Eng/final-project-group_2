@@ -173,4 +173,3 @@ We would like to thank all the contributors and libraries that made this project
 - https://github.com/AgaMiko/waste-datasets-review/tree/main
 - https://github.com/nikhilvenkatkumsetty/TrashBox
 - https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/getting-started-python.html
->>>>>>> initial_merge
